@@ -1,0 +1,59 @@
+Data:
+
+users:
+	userId(pk)
+	username
+	password
+	first name
+	last name
+	DOB
+	email
+	phone number(optional)
+	address
+	accountStatus(active/deleted)
+	(admin status)?
+	
+events:
+	eventId(pk)
+	eventName
+	locationId(fk)
+	genre
+	date
+	time
+	price
+	maximum capacity (fk)
+	current # of tickets sold
+
+artist:
+	artistName(comp.pk)
+	eventId(fk)(comp.pk)
+
+location:
+	locationId(pk)
+	address
+	maximum capacity
+
+orders:
+	orderId (pk)
+	ticketId(fk)
+	ticketQuantity
+	totalPrice
+
+seat:
+	seatId (comp.pk)
+	locationId (fk)(comp.pk)
+	status
+
+ticket:
+	ticketId (pk)(event name + number of ticket sold)
+	seatId(fk)
+	eventId(fk)
+	locationId(fk)
+	
+
+
+
+For ticket, how is seatId/locationId referenced as an fk
+Does every event need an opening act?
+Is user and admin on the same page
+Are we to assume the existance of festivals
