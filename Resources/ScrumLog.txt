@@ -1,0 +1,32 @@
+Daily Scrum Log
+
+16/10/2023
+	Sophie:
+		-Started wireframe
+		-Plans to continue working on wireframe
+		-Will discuss page features and design with team, periodically
+	
+	Bo Kyung:
+		-Started ERD
+		-Will finalize ERD and share results
+		-Problem: Unsure how to setup username and password for mySQL database
+		
+	Nicholas:
+		-Will compile information for the research plaintext, required for initial milestone
+
+17/10/2023
+	Sophie:
+		-Finished working on home page design
+		-Will continue working on individual event page design
+		
+	
+	Bo Kyung:
+		-Updated ERD
+		
+
+	Nicholas:
+		-Completed research plaintext
+		-Will design the wireframe for the contact us and user settings pages
+
+	
+		
