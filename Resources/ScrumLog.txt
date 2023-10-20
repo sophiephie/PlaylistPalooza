@@ -42,6 +42,12 @@ Daily Scrum Log
 		-Finished contact us and user setting
 		-Push the txt and scrum logs
 		-start coding phase
-
+20/10/2023
+	Sophie:
+		-Header, Footer
+	BK:
+		-Contact us, User Login/Sign Up
+	Nicholas: 
+		-Homepage, Event page
 	
 		
