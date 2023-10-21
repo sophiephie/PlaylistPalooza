@@ -1,0 +1,78 @@
+body {
+  background-color: #fff0df;
+}
+
+/* Styling for SLIDESHOW Starts Here*/
+/* ------------------------------- */
+#slides figure {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#slides figure figcaption {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  font-size: xx-large;
+  background-color: black;
+  padding-left: 7%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  padding-right: 0.5%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#backButton {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+  z-index: 10;
+  padding: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#forwardButton {
+  position: absolute;
+  top: 28%;
+  right: 5%;
+  z-index: 10;
+  padding: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+#slides img {
+  width: 100%;
+  height: 500px;
+}
+/* ------------------------------- */
+/* Styling for SLIDESHOW Ends Here*/
+
+/* Styling for EVENTS Starts Here*/
+/* ------------------------------- */
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.event {
+  padding-bottom: 5%;
+}
+
+.event a img {
+  height: 75% !important;
+  width: 75% !important;
+  border-color: black;
+  border-width: 10%;
+}
+/* ------------------------------- */
+/* Styling for EVENTS Ends Here*/
