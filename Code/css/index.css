@@ -10,6 +10,30 @@ body {
 
 /* Styling for EVENTS Starts Here*/
 /* ------------------------------- */
+.eventsHeader {
+  font-family: bebas neue;
+}
 
+.col a img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 10px 10px;
+}
+
+.col figcaption {
+  font-family: bebas neue;
+  background-color: #8b8589 !important;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  padding-left: 1%;
+}
+
+.loadButton button {
+  /* font-family:; */
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-bottom: 1%;
+}
 /* ------------------------------- */
 /* Styling for EVENTS Ends Here*/
