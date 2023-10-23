@@ -71,89 +71,95 @@ include "index.html";
         </article>
     </article>
 
-    <article class="container-fluid">
-        <section class="row mt-2">
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-        </section>
-        <section class="row">
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-        </section>
-        <section class="row">
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-            <figure class="col">
-                <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                <figcaption>
-                    <h4>Laval</h4>
-                    <h2>Charlotte Cardin</h2>
-                    <h4>Feb 8 2023</h4>
-                </figcaption>
-            </figure>
-        </section>
+    <article class="events">
+        <article class="container-fluid">
+            <section class="eventsHeader mt-4">
+                <h2>Upcoming Events</h2>
+            </section>
 
-        <section class="loadButton">
-            <button type="button" class="btn btn-dark">Load More</button>
-        </section>
+            <section class="row mt-2">
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+            </section>
+            <section class="row">
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+            </section>
+            <section class="row">
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+                <figure class="col">
+                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
+                    <figcaption>
+                        <h4>Laval</h4>
+                        <h2>Charlotte Cardin</h2>
+                        <h4>Feb 8 2023</h4>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="loadButton text-center">
+                <button type="button" class="btn btn-dark">Load More</button>
+            </section>
+        </article>
     </article>
 
 
