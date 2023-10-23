@@ -28,5 +28,26 @@ Daily Scrum Log
 		-Completed research plaintext
 		-Will design the wireframe for the contact us and user settings pages
 
+18/10/2023
+	Sophie:
+		-Finished Event page and other pages
+		-Fine tuning the wireframe a little more
+		-start coding
+	BK: 
+		-Study
+		-study more
+		-start coding
+
+	Nicholas:
+		-Finished contact us and user setting
+		-Push the txt and scrum logs
+		-start coding phase
+20/10/2023
+	Sophie:
+		-Header, Footer
+	BK:
+		-Contact us, User Login/Sign Up
+	Nicholas: 
+		-Homepage, Event page
 	
 		
