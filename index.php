@@ -5,6 +5,8 @@ $artistPic3 = "https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253
 $artistName1 = "Artist_Name_1";
 $artistName2 = "Artist_Name_2";
 $artistName3 = "Artist_Name_3";
+
+include "index.html";
 ?>
 
 
@@ -15,8 +17,8 @@ $artistName3 = "Artist_Name_3";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css" />
-    <title>Playlist Palooza</title>
+    <link rel="stylesheet" href="code/css/index.css" />
+    <title>Home | Playlist Palooza</title>
 </head>
 
 <body>
@@ -148,7 +150,13 @@ $artistName3 = "Artist_Name_3";
                 </figcaption>
             </figure>
         </section>
+
+        <section class="loadButton">
+            <button type="button" class="btn btn-dark">Load More</button>
+        </section>
     </article>
+
+
     <script src="javascript/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
