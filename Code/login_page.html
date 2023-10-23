@@ -11,9 +11,64 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-  </head>
 
+    <link href="image/icon2.png" rel="icon" />
+
+    <!-- Add Bootstrap CSS link -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Link to google font api -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
+    <!-- header-->
+
+    <!-------------------->
+    <!-- NAVIGATION BAR -->
+    <!-------------------->
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container">
+        <!-- Logo on the left (replace this with logo) -->
+        <a class="navbar-brand" href="#"
+          ><img
+            src="image/logo2.png"
+            alt="Playlist Palooza"
+            height="39"
+            width="245"
+        /></a>
+
+        <!-- Search bar in the center -->
+        <form class="form-inline search-bar">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="#">Sign In</a>
+        </div>
+      </div>
+    </nav>
+    <!-- end of header -->
+
     <!-- login form-->
     <div class="wrapper">
       <form class="form-signin">
@@ -70,10 +125,23 @@
         <!-- sign up -->
         <div class="signup">
           <br />
-          <p>Not a member? <a href="signup.html">Sign Up</a></p>
+          <p>Not a member? <a href="signup_page.html">Sign Up</a></p>
         </div>
       </form>
     </div>
+
+    <!-- footer-->
+
+    <!-------------------->
+    <!-- FOOTER BAR -->
+    <!-------------------->
+
+    <footer class="custom-footer">
+      <div class="container">
+        <p>&copy; 2023 Playlist Palooza. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- end of footer-->
 
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
