@@ -49,5 +49,18 @@ Daily Scrum Log
 		-Contact us, User Login/Sign Up
 	Nicholas: 
 		-Homepage, Event page
+
+23/10/2023
+	Nicholas:
+		-started homepage and event page
+		-continue working on it
+		-link with header and footer
+	Sophie:
+		-started header and footer
+		-link login in the nav, organize the files, continue on nav and footer
+		-unsure about social media links icon
+	BK: 
+		-started login/signup/contact us page
+		-start php, link header and footer
 	
 		
