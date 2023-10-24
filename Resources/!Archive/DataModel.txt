@@ -20,7 +20,7 @@ events:
 	time
 	openingAct (by an artist) (optional)
 	price
-        numOfTicketSol
+        numOfTicketSold
 
 artist:
 	artistId(pk)
@@ -30,7 +30,7 @@ location:
 	locationId(pk)
         locationName
 	address
-	maximum capacity
+	maxCapacity
 
 orders:
 	orderId (pk)
