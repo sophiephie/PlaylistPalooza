@@ -62,5 +62,22 @@ Daily Scrum Log
 	BK: 
 		-started login/signup/contact us page
 		-start php, link header and footer
-	
+
+23/10/2023
+	Sophie:
+		-Seperated the header and footer in individual files
+		-Working on implementing social media icons for footer
+		-Problem with Bootstrap social media icons
+
+	Bo Kyung:
+		-Added header/footer to existing pages
+		-Started adding PHP to existing pages
+
+	Nicholas:
+		-Tweaked styling of index.php
+		-Added main content to eventPage.php
+		-Will continue to tweak eventPage.php with team feedback
+
+
+
 		
