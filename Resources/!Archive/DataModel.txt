@@ -3,8 +3,8 @@ Data:
 users:
 	userId(pk)
 	password
-	first name
-	last name
+	firstName
+	lastName
 	email
 	phone number
 	accountStatus(active/deleted)
@@ -12,14 +12,15 @@ users:
 	
 events:
 	eventId(pk)
+        eventName
 	artistId(fk)
 	locationId(fk)
-	genre
+	musicalGenre
 	date
 	time
-	opening act (by an artist)
+	openingAct (by an artist) (optional)
 	price
-	current # of tickets sold
+        numOfTicketSol
 
 artist:
 	artistId(pk)
@@ -27,11 +28,13 @@ artist:
 
 location:
 	locationId(pk)
+        locationName
 	address
 	maximum capacity
 
 orders:
 	orderId (pk)
+        userId (pk)
 	ticketId(fk)
 	ticketQuantity
 	totalPrice
