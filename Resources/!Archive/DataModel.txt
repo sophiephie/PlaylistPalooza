@@ -12,18 +12,18 @@ users:
 	
 events:
 	eventId(pk)
-	eventName
+	artistId(fk)
 	locationId(fk)
 	genre
 	date
 	time
+	opening act (by an artist)
 	price
-	maximum capacity (fk)
 	current # of tickets sold
 
 artist:
-	artistName(comp.pk)
-	eventId(fk)(comp.pk)
+	artistId(pk)
+	artistName
 
 location:
 	locationId(pk)
@@ -36,21 +36,13 @@ orders:
 	ticketQuantity
 	totalPrice
 
-seat:
-	seatId (comp.pk)
-	locationId (fk)(comp.pk)
-	status
-
 ticket:
 	ticketId (pk)(event name + number of ticket sold)
-	seatId(fk)
 	eventId(fk)
-	locationId(fk)
 	
 
 
 
-For ticket, how is seatId/locationId referenced as an fk
-Does every event need an opening act?
-Is user and admin on the same page
-Are we to assume the existance of festivals
+Does every event need an opening act? its optional
+do we need to use meekro or PDO = any works
+admin page vs user page
