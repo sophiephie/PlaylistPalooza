@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Montserrat";
 }
 
 .main {
@@ -35,9 +31,8 @@
   font-style: italic;
 }
 
-h2 {
-  font-size: 10px;
-  text-align: center;
+.vision h2 {
+  font-family: "Montserrat";
 }
 
 p {
@@ -45,9 +40,10 @@ p {
 }
 
 .info {
-  background-color: lightgrey;
+  background-color: #b4aaa9;
   padding: 70px;
   text-align: center;
+  font-family: "Montserrat";
 }
 
 .info-row {
@@ -93,6 +89,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Montserrat";
 }
 
 .contact {
