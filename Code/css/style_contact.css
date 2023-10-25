@@ -5,7 +5,7 @@
 }
 
 .main {
-  padding: 200px;
+  padding: 150px;
   text-align: center;
   color: white;
   background-image: url(../image/background.jpg);
@@ -21,7 +21,7 @@
 
 .vision {
   background-color: white;
-  padding: 100px;
+  padding: 80px;
   text-align: center;
 }
 
@@ -41,7 +41,7 @@ p {
 
 .info {
   background-color: #b4aaa9;
-  padding: 70px;
+  padding: 80px;
   text-align: center;
   font-family: "Montserrat";
 }

@@ -1,13 +1,24 @@
 <?php
 
-include "header.html";
+// include "header.html";
 
-/*
-$artistName = "Artist Name";
-$eventName = "Event Name";
-$eventLocation = "Place Bell Laval";
-$eventDate = "November 21, 2023";
-*/
+$errorMessage = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $message = $_POST["message"];
+
+  // check if required fields are empty.
+  if (empty($name) || empty($email) || empty($message)) {
+    $errorMessage = "Please fill in all the required fields.";
+  }
+
+  // Process the form data if there are no errors.
+  if (empty($errorMessage)) {
+    $successMessage = "Thank you for your submission!";
+  }
+}
 
 ?>
 
@@ -145,10 +156,10 @@ $eventDate = "November 21, 2023";
       <section class="contact">
         <h2>Contact Us</h2>
         <br />
-        <form>
+        <form method="POST" action="contact.php">
           <div class="mb-3">
             <label for="inputName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="inputName" />
+            <input type="text" class="form-control" id="inputName" name="name" />
           </div>
 
           <div class="mb-3">
@@ -157,6 +168,7 @@ $eventDate = "November 21, 2023";
               type="email"
               class="form-control"
               id="inputEmail"
+              name="email"
               placeholder="name@example.com"
             />
           </div>
@@ -166,6 +178,7 @@ $eventDate = "November 21, 2023";
             <textarea
               class="form-control"
               id="inputMessage"
+              name="message"
               rows="4"
               aria-describedby="messageHelpBlock"
             ></textarea>
@@ -194,5 +207,16 @@ $eventDate = "November 21, 2023";
 </html>
 
 
-<?php include "footer.html";?>
+<?php
+
+if (!empty($errorMessage)) {
+  echo '<div class="alert alert-danger">' . $errorMessage . '</div>';
+}
+if (isset($successMessage)) {
+  echo '<div class="alert alert-success">' . $successMessage . '</div>';
+}
+
+// include "footer.html";
+
+?>
 
