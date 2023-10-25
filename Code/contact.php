@@ -35,6 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+</head>
+</head>
   </head>
 
   <body>
@@ -210,10 +212,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 
 if (!empty($errorMessage)) {
-  echo '<div class="alert alert-danger">' . $errorMessage . '</div>';
+  echo '<script>alert("' . $errorMessage . '");</script>';
 }
 if (isset($successMessage)) {
-  echo '<div class="alert alert-success">' . $successMessage . '</div>';
+  echo '<script>alert("' . $successMessage . '");</script>';
 }
 
 // include "footer.html";
