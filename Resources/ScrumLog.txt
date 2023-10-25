@@ -63,7 +63,7 @@ Daily Scrum Log
 		-started login/signup/contact us page
 		-start php, link header and footer
 
-23/10/2023
+24/10/2023
 	Sophie:
 		-Seperated the header and footer in individual files
 		-Working on implementing social media icons for footer
@@ -77,6 +77,26 @@ Daily Scrum Log
 		-Tweaked styling of index.php
 		-Added main content to eventPage.php
 		-Will continue to tweak eventPage.php with team feedback
+
+25/10/2023
+	Sophie:
+		-Seperated header and footer into individual files
+		-Added link to sign in page from header
+		-Must fix bug related to header styling, when footer is present on same page
+
+	Bo Kyung:
+		-Created contact.php
+		-Added code to display success and error messages
+		-Updated ERD based on group discussion
+		-Will create PHP files for login/signup pages
+		-Will add data to database
+		
+	Nicholas:
+		-Tweaked styling of index.php and eventPage.php based on group feedback
+		-Will start implementing PHP functionality on index.php and eventPage.php
+		
+
+
 
 
 
