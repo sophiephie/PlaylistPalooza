@@ -1,39 +1,44 @@
 <?php
 
+session_start();
+
 // connect to database
-require 'includes/dbConnect.php';
+include "includes/dbConnect.php";
 
 $errorMessages = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
-  $username = $_POST['txtUser'];
-  $password = $_POST['txtPass'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
-  // Query the database
-  $sql = "SELECT * FROM users WHERE username = :user";
-		$query = $db->prepare($sql);
-		$query->execute(['user'=> $username]);
-		$data = $query->fetch();
+  // Check if both username and password are provided
+  if(empty($username) || empty($password)){
+    $errorMessages = "All fields are required";
+  } else{
+    // Query the database only if both fields are provided
+    $sql = "SELECT * FROM users WHERE username = :username";
+    $query = $db->prepare($sql);
+    $query->execute(['username' => $username]);
+    $data = $query->fetch();
 
-    if ($data){
-			// username exist in the database
-			
-			if (password_verify($password, $data['password'])){
-				// The username and password match
+    if ($data) { // Username exists in the database
 
-        session_start();
-        // $_SESSION['user_id'] = $data['id'];
-        
-        // redirect
-        header('location: index.php');
+      // if (password_verify($password, $data['password']))
+      if ($password == $data['password']){ // The username and password match
+
+        // Redirect after successful login
+        header('location: ../index.php');
         die();
-			} else {
-        // username does not exits in the database OR password does not match
-		    $errorMessages = "Invalid username or password.";
+      } else { // Password does not match
+        $errorMessages = "Invalid username or password.";
       }
-		}
+    } else { // Username does not exist in the database
+      $errorMessages = "Invalid username or password.";
+    }
   }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -57,13 +62,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
       <form class="form-signin" action="login.php" method="post">
         <h2 class="form-signin-heading">User Login</h2>
 
+        <!-- display the error message if there's any -->
+        <?php if(!empty($errorMessages)){ ?>
+          <div class="alert alert-danger">
+            <?php echo $errorMessages; ?></div>
+        <?php } ?>
+        
         <!-- email input -->
         <input
           type="text"
           class="form-control"
-          name="txtUser"
+          name="username"
           placeholder="Email Address"
-          required="required"
+          id="username"
           autofocus=""
         />
 
@@ -71,44 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <input
           type="password"
           class="form-control"
-          name="txtPass"
+          name="password"
           placeholder="Password"
-          required="required"
+          id="password"
         />
 
-        <!-- display the error message if there's any -->
-        <?php if (!empty($errorMessages)): ?>
-          <div class="alert alert-danger">
-            <?php echo $errorMessages; ?>
-          </div>
-        <?php endif; ?>
-
-        <!-- remember me -->
-        <div class="row mb-4">
-          <div class="col d-flex justify-content-center">
-            <!-- Checkbox -->
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="form2Example31"
-                checked
-              />
-              <label class="form-check-label" for="form2Example31">
-                Remember me
-              </label>
-            </div>
-          </div>
-
-          <div class="col">
-            <!-- Simple link -->
-            <a href="#!">Forgot password?</a>
-          </div>
-        </div>
-
         <!-- submit button-->
-        <button class="btn btn-lg btn-primary btn-block" type="submit">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
           Login
         </button>
 

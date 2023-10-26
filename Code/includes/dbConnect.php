@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // allows the use of $_SESSION
+// session_start(); // allows the use of $_SESSION
 
 // set flag to know if user if logged in
-$userIsLoggedIn = $_SESSION['loggedIn'] ?? false;
+// $userIsLoggedIn = $_SESSION['loggedIn'] ?? false;
 
 // variable
 $dbType = "mysql";
