@@ -94,6 +94,22 @@ Daily Scrum Log
 	Nicholas:
 		-Tweaked styling of index.php and eventPage.php based on group feedback
 		-Will start implementing PHP functionality on index.php and eventPage.php
+
+26/10/2023
+	Sophie:
+		-Fixed footer and header bug
+		-Created a basic user checkout page
+		-Will start adding search functionality to header/site
+
+	Bo Kyung:
+		-Created login.php and started implementing functions
+		-Created database for testing
+		-Problems with fetching data from test database
+		
+	Nicholas:
+		-Re-implemented header and footer, due to changes the their design
+		-Created database for testing
+		-Started replacing hard-coded values with data from test database, to index.php 
 		
 
 
