@@ -1,9 +1,21 @@
-/* Custom CSS for the navigation bar */
+html,
+body {
+  height: 100% !important;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/**************************************** Custom CSS for the navigation bar */
 .custom-navbar {
   background-color: #b4aaa9;
   color: #000;
   font-family: bebas neue;
-  font-size: px;
+  font-size: 25px;
   padding: 20px 0;
   text-align: center;
 }
@@ -19,17 +31,17 @@
 }
 
 /* Center the navigation links */
-.nav-links {
+.navbar-nav {
   display: flex;
   justify-content: center;
 }
 
-.nav-links .nav-link {
+.navbar-nav .nav-link {
   color: #000;
   font-size: 25px;
 }
 
-.nav-links .nav-link:hover {
+.navbar-nav .nav-link:hover {
   color: #ffd88a;
 }
 
@@ -50,7 +62,27 @@
   background-color: #8b8589; /* Taupe color */
   color: #000;
   text-align: center;
-  font-family: "Montserrat", sans-serif; /* Montserrat font */
+  font-family: "Bebas Neue";
   padding: 20px 0;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+#footer path {
+  border-radius: 40px;
+}
+
+/* .p-4 {
+  background-color: #b4aaa9;
+} */
+
+#footer {
+  background-color: #b4aaa9;
+}
+
+.btn-primary {
+  border-radius: 25px;
+}
+
+.bg-light {
+  background-color: #b4aaa9;
 }
