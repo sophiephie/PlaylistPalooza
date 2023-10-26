@@ -1,6 +1,6 @@
 <?php
 
-// include "header.html";
+include "../includes/header.html";
 
 $errorMessage = "";
 
@@ -34,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;400&display=swap"
+      rel="stylesheet"
     />
 </head>
 </head>
@@ -218,7 +222,7 @@ if (isset($successMessage)) {
   echo '<script>alert("' . $successMessage . '");</script>';
 }
 
-// include "footer.html";
+include "../includes/footer.html";
 
 ?>
 

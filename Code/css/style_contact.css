@@ -8,13 +8,14 @@
   padding: 150px;
   text-align: center;
   color: white;
-  background-image: url(../image/background.jpg);
+  background-image: url(../images/background.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .main h1 {
   font-family: "Bebas Neue";
+
   font-weight: bold;
   font-size: 100px;
 }
