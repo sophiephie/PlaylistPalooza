@@ -1,12 +1,26 @@
 <?php
+require 'code/includes/dbConnect_temp.php';
+
+$sql = "SELECT * FROM events";
+$data = [];
+$dataArtist = [];
+
+$query = $db->prepare($sql);
+$query->execute($data);
+
+
+$getArtistName = $db->prepare("SELECT * FROM artist");
+$getArtistName->execute($dataArtist);
+
 $artistPic1 = "https://www.evenko.ca/_uploads/event/51087/featured.jpg?v=1670334813";
 $artistPic2 = "https://www.evenko.ca/_uploads/event/57675/featured.jpg?v=1697740433";
 $artistPic3 = "https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863";
 $artistName1 = "Artist_Name_1";
 $artistName2 = "Artist_Name_2";
 $artistName3 = "Artist_Name_3";
-
-include "index.html";
+$eventPage1 = "https://www.w3schools.com";
+$eventPage2 = "https://www.w3schools.com";
+$eventPage3 = "https://www.w3schools.com";
 ?>
 
 
@@ -17,12 +31,15 @@ include "index.html";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="code/css/styles.css" />
     <link rel="stylesheet" href="code/css/index.css" />
     <title>Home | Playlist Palooza</title>
 </head>
 
-<body>
-    <article class="slideshow">
+<body id="indexBody">
+    <header style="background-color: #b4aaa9;"> <?php include "includes/header.html"; ?> </header>
+
+    <article style="background-color: #fff0df;" class="slideshow">
         <article class="container">
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
@@ -32,27 +49,27 @@ include "index.html";
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?= $artistPic1 ?>" class="d-block w-100" alt="..." />
+                        <a href="<?= $eventPage1 ?>"> <img src="<?= $artistPic1 ?>" class="d-block w-100" alt="..." /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
+                            <h5><?= $artistName1 ?></h5>
                             <p>
                                 Some representative placeholder content for the first slide.
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= $artistPic2 ?>" class="d-block w-100" alt="..." />
+                        <a href="<?= $eventPage2 ?>"> <img src="<?= $artistPic2 ?>" class="d-block w-100" alt="..." /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
+                            <h5><?= $artistName1 ?></h5>
                             <p>
                                 Some representative placeholder content for the second slide.
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= $artistPic3 ?>" class="d-block w-100" alt="..." />
+                        <a href="<?= $eventPage3 ?>"> <img src="<?= $artistPic3 ?>" class="d-block w-100" alt="..." /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
+                            <h5><?= $artistName1 ?></h5>
                             <p>
                                 Some representative placeholder content for the third slide.
                             </p>
@@ -77,94 +94,43 @@ include "index.html";
                 <h2>Upcoming Events</h2>
             </section>
 
-            <section class="row mt-2">
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-            </section>
-            <section class="row">
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-            </section>
-            <section class="row">
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-                <figure class="col">
-                    <a href=#> <img src="https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863" alt="artist name" width="100%"></a>
-                    <figcaption>
-                        <h4>Laval</h4>
-                        <h2>Charlotte Cardin</h2>
-                        <h4>Feb 8 2023</h4>
-                    </figcaption>
-                </figure>
-            </section>
+            <?php while ($row = $query->fetch()) {
+                $link = "eventPage.php?item=" . $row['eventId'];
 
-            <section class="loadButton text-center">
-                <button type="button" class="btn btn-dark">Load More</button>
-            </section>
+                $getArtistTable = $db->prepare("SELECT * FROM artist where artistId = :id");
+                $getArtistTable->execute(['id' => $row['mainArtistId']]);
+                $rowArt = $getArtistTable->fetch();
+
+                $getLocationTable = $db->prepare("SELECT * FROM locations where locationId = :id");
+                $getLocationTable->execute(['id' => $row['location_Id']]);
+                $rowLoc = $getLocationTable->fetch();
+
+            ?>
+
+                <section class="eventCardsCon container-fluid">
+                    <figure class="eventCards">
+                        <a href=<?= $link ?>> <img src="<?= $rowArt['imageLink']; ?>" alt="artist name"></a>
+                        <figcaption>
+                            <h4><?= $rowLoc['locationName']; ?></h4>
+                            <h2><?= $rowArt['artistName']; ?></h2>
+                            <h4><?= date('F j, Y', strtotime($row['date'])); ?></h4>
+                        </figcaption>
+                    </figure>
+                </section>
         </article>
     </article>
+<?php }
+?>
 
+<section class="loadButton text-center">
+    <button type="button" class="btn btn-dark">Load More</button>
+</section>
 
-    <script src="javascript/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<footer>
+    <?php include "includes/footer.html"; ?>
+</footer>
+<script src="javascript/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
