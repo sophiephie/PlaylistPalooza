@@ -110,6 +110,11 @@ Daily Scrum Log
 		-Re-implemented header and footer, due to changes the their design
 		-Created database for testing
 		-Started replacing hard-coded values with data from test database, to index.php 
+27/10/2023
+	Sophie:
+		-added header.php
+		-make the nav dynamic (login/logout status), continue building searh function, make checkoutpage dynamic
+		-still trying to debug and make code to work
 		
 
 
