@@ -3,17 +3,12 @@ body {
 }
 
 .row img {
-  padding-top: 10% !important;
+  padding-top: 2% !important;
 }
 
 .row .eventInfo {
-  padding-top: 15% !important;
+  padding-top: 2% !important;
 }
-/* Styling for SHOWCASE PHOTO Starts Here*/
-/* ------------------------------- */
-
-/* ------------------------------- */
-/* Styling for SHOWCASE PHOTO Ends Here*/
 
 /* Styling for EVENT INFO Starts Here*/
 /* ------------------------------- */
@@ -40,7 +35,7 @@ body {
   padding-bottom: 1%;
 }
 
-.otherEvent h2 {
+.otherEvents h2 {
   padding-top: 5%;
   font-weight: 600;
 }
