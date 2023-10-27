@@ -34,9 +34,8 @@ Daily Scrum Log
 		-Fine tuning the wireframe a little more
 		-start coding
 	BK: 
-		-Study
-		-study more
-		-start coding
+		-Reviewed and practiced phpMyAdmin database
+		-start coding phase
 
 	Nicholas:
 		-Finished contact us and user setting
@@ -115,6 +114,10 @@ Daily Scrum Log
 		-added header.php
 		-make the nav dynamic (login/logout status), continue building searh function, make checkoutpage dynamic
 		-still trying to debug and make code to work
+        Bo Kyung:
+		-finished implementing functions to login.php
+		-Created signup.php and started implementing functions
+		-Issues with dealing with accountStatus / adminStatus data in users table.
 		
 
 
