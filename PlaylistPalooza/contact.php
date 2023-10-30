@@ -1,6 +1,6 @@
 <?php
 
-include "../includes/header.html";
+include "includes/header.html";
 
 $errorMessage = "";
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/style_contact.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -222,7 +222,7 @@ if (isset($successMessage)) {
   echo '<script>alert("' . $successMessage . '");</script>';
 }
 
-include "../includes/footer.html";
+include "includes/footer.html";
 
 ?>
 

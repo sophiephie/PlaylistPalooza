@@ -4,7 +4,7 @@ include "includes/header.html";
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/Code/css/checkout.css" />
+<link rel="stylesheet" href="css/checkout.css" />
     <title>Playlist Palooza Checkout</title>
 </head>
 <body>

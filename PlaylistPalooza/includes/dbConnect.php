@@ -13,7 +13,7 @@ $userIsLoggedIn = $_SESSION['loggedIn'] ?? false;
 // variables
 $dbType = "mysql"; // type of db to connect to
 $dbServer = "localhost"; // host name of my server
-$dbName = "playlist_palooza_db"; // name of my db
+$dbName = "fsd10_Whisky"; // name of my db
 $dbPort = "3307"; // port for db server
 $dbCharset = "utf8"; // charset encoding for db
 $dbUsername = "fsduser"; // user with access to db

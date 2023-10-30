@@ -1,5 +1,5 @@
 <?php
-require 'code/includes/dbConnect_temp.php';
+require 'includes/dbConnect.php';
 
 $sql = "SELECT * FROM events";
 $data = [];
@@ -31,13 +31,14 @@ $eventPage3 = "https://www.w3schools.com";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="code/css/styles.css" />
-    <link rel="stylesheet" href="code/css/index.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Home | Playlist Palooza</title>
 </head>
 
 <body id="indexBody">
-    <header style="background-color: #b4aaa9;"> <?php include "includes/header.html"; ?> </header>
+    <header style="background-color: #b4aaa9;"> <?php include "includes/header.html"; ?> </header
+    >
 
     <article style="background-color: #fff0df;" class="slideshow">
         <article class="container">

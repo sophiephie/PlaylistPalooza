@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 // connect to database
 include "includes/dbConnect.php";
 
@@ -24,11 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     if ($data) { // Username exists in the database
 
-      // if (password_verify($password, $data['password']))
-      if ($password == $data['password']){ // The username and password match
+      if (password_verify($password, $data['password'])){ // The username and password match
 
         // Redirect after successful login
-        header('location: ../index.php');
+        header('location: index.php');
         die();
       } else { // Password does not match
         $errorMessages = "Invalid username or password.";
@@ -46,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style_login.css" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -92,10 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
           Login
         </button>
 
-        <!-- sign up -->
+        <!-- link to sign up page -->
         <div class="signup">
           <br />
-          <p>Not a member? <a href="signup.html">Sign Up</a></p>
+          <p>Not a member? <a href="signup.php">Sign Up</a></p>
         </div>
       </form>
     </div>

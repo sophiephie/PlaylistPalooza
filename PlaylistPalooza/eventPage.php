@@ -18,7 +18,7 @@ $eventDate = "November 21, 2023";
 </head>
 
 <body>
-    <header> <?php include "../includes/header.html"; ?> </header>
+    <header> <?php include "includes/header.html"; ?> </header>
 
     <article style="background-color: #fff0df;" class="event container-fluid">
 
@@ -84,7 +84,7 @@ $eventDate = "November 21, 2023";
     </article>
 
     <footer>
-        <?php include "../includes/footer.html"; ?>
+        <?php include "includes/footer.html"; ?>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
