@@ -3,7 +3,7 @@ $artistName = "Artist Name";
 $eventName = "Event Name";
 $eventLocation = "Place Bell Laval";
 $eventDate = "November 21, 2023";
-include "../includes/header.html";
+include "includes/header.html";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,6 @@ include "../includes/header.html";
 </head>
 
 <body>
-<<<<<<< HEAD:PlaylistPalooza/eventPage.php
-    <header> <?php include "includes/header.html"; ?> </header>
-
-=======
->>>>>>> 4e913916e612850ba2af9e2b955d342bf7605d0b:Code/eventPage.php
     <article style="background-color: #fff0df;" class="event container-fluid">
 
         <article class="row text-center">
