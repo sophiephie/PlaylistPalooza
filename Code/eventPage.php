@@ -3,6 +3,7 @@ $artistName = "Artist Name";
 $eventName = "Event Name";
 $eventLocation = "Place Bell Laval";
 $eventDate = "November 21, 2023";
+include "../includes/header.html";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +19,6 @@ $eventDate = "November 21, 2023";
 </head>
 
 <body>
-    <header> <?php include "../includes/header.html"; ?> </header>
-
     <article style="background-color: #fff0df;" class="event container-fluid">
 
         <article class="row text-center">
