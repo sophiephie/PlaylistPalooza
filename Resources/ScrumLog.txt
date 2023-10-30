@@ -120,8 +120,18 @@ Daily Scrum Log
 		-Issues with dealing with accountStatus / adminStatus data in users table.
 		
 
+30/10/2023
+	Sophie:
+		-search bar and login/logout code 
+		-debug search bar and checkout page created to database
+		-modal with login, debug code, styling of the whole 
+	Bo Kyung:
+		-implement php functionality on signup, created html for the user setting page, 
+		-test the page
 
-
-
+	Nicholas:
+		-homepage, database set up, event page
+		-finish the homepage, fix the styling, set up load more
+		-styling of the footer icons
 
 		
