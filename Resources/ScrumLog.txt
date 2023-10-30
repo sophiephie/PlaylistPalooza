@@ -116,8 +116,8 @@ Daily Scrum Log
 		-still trying to debug and make code to work
         Bo Kyung:
 		-finished implementing functions to login.php
-		-Created signup.php and started implementing functions
-		-Issues with dealing with accountStatus / adminStatus data in users table.
+		-created signup.php and started implementing functions
+		-issues with dealing with accountStatus / adminStatus data in users table
 		
 
 30/10/2023
@@ -126,9 +126,9 @@ Daily Scrum Log
 		-debug search bar and checkout page created to database
 		-modal with login, debug code, styling of the whole 
 	Bo Kyung:
-		-implement php functionality on signup, created html for the user setting page, 
+		-implement php functionality on signup, created html for the user setting page
+		-re-organize all the files in github
 		-test the page
-
 	Nicholas:
 		-homepage, database set up, event page
 		-finish the homepage, fix the styling, set up load more
