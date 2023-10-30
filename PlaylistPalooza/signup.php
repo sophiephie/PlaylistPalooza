@@ -1,65 +1,4 @@
-<?php
-
-// connect to database
-include "includes/dbConnect.php";
-
-// check if the form was submitted
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $passwordAgain = $_POST['passwordAgain'];
-  $firstName = $_POST['firstName'];
-  $lastName = $_POST['lastName'];
-  $phoneNumber = $_POST['phoneNumber'];
-
-  $errorMessages = "";
-
-  // validate the data
-  if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
-    $errorMessages .= "Please enter a valid email address. <br/>";
-  }
-
-  if (empty($password)) {
-    $errorMessages .= "Please enter a password. <br/>";
-  }
-
-  if (empty($passwordAgain)) {
-    $errorMessages .= "Please enter a password again. <br/>";
-  }
-
-  if ($password != $passwordAgain) {
-    $errorMessages .= "Password do not match. <br/>";
-  }
-
-  if (empty($firstName) || empty($lastName) || empty($phoneNumber) ) {
-    $errorMessages .= "All fields are required. <br/>";
-  }
-
-  if(empty($errorMessages)){
-
-    // Hash the password securely
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert user data into the database
-
-    $sql = "INSERT INTO users (email, password, firstName, lastName, phoneNumber) VALUES (:email, :password, :firstName, :lastName, :phoneNumber)";
-    $stmt = $db->prepare($sql);
-
-    if ($stmt->execute([$email, $hashedPassword, $firstName, $lastName, $phoneNumber])) {
-        // User registration successful
-        // redirect the user to a success page
-        header("Location: index.php");
-        exit();
-    } else {
-        // Handle database error
-        $errorMessages .= "Error registering the user. Please try again.";
-    }
-  }
-}
-
-
-?>
+<?php include "includes/header.html"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <!-- sign up form-->
 
     <div class="wrapper">
-      <form class="form-signin" action="signup.php" method="POST">
+      <form class="form-signin" action="signup_process.php" method="POST">
         <h2 class="form-signin-heading">Sign Up</h2>
 
         <!-- email -->
@@ -92,9 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <!-- password -->
         <div class="form-outline mb-4">
           <input
-            type="text"
+            type="password"
             id="password"
-            name = "email"
+            name = "password"
             class="form-control form-control-lg"
           />
           <label class="form-label" for="password">Password</label>
@@ -103,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <!-- password again -->
         <div class="form-outline mb-4">
           <input
-            type="text"
+            type="password"
             id="passwordAgain"
             name="passwordAgain"
             class="form-control form-control-lg"
@@ -169,3 +108,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     ></script>
   </body>
 </html>
+
+<?php include "includes/footer.html"; ?>

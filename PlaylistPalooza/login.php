@@ -1,5 +1,7 @@
 <?php
 
+include "includes/header.html";
+
 // connect to database
 include "includes/dbConnect.php";
 
@@ -7,31 +9,31 @@ $errorMessages = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
-  $username = $_POST['username'];
+  $email = $_POST['email'];
   $password = $_POST['password'];
 
-  // Check if both username and password are provided
-  if(empty($username) || empty($password)){
+  // Check if both email and password are provided
+  if(empty($email) || empty($password)){
     $errorMessages = "All fields are required";
   } else{
     // Query the database only if both fields are provided
-    $sql = "SELECT * FROM users WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE email = :email";
     $query = $db->prepare($sql);
-    $query->execute(['username' => $username]);
+    $query->execute(['email' => $email]);
     $data = $query->fetch();
 
-    if ($data) { // Username exists in the database
+    if ($data) { // email exists in the database
 
-      if (password_verify($password, $data['password'])){ // The username and password match
+      if (password_verify($password, $data['password'])){ // The email and password match
 
         // Redirect after successful login
         header('location: index.php');
         die();
       } else { // Password does not match
-        $errorMessages = "Invalid username or password.";
+        $errorMessages = "Invalid email or password.";
       }
-    } else { // Username does not exist in the database
-      $errorMessages = "Invalid username or password.";
+    } else { // email does not exist in the database
+      $errorMessages = "Invalid email or password.";
     }
   }
 }
@@ -69,9 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         <input
           type="text"
           class="form-control"
-          name="username"
+          name="email"
           placeholder="Email Address"
-          id="username"
+          id="email"
           autofocus=""
         />
 
@@ -104,3 +106,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     ></script>
   </body>
 </html>
+
+<?php include "includes/footer.html"; ?>
