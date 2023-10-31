@@ -1,5 +1,5 @@
 <?php
-require('config.php'); // Include your database connection file
+require('dbConnect.php'); // Include your database connection file
 
 if (isset($_GET['query'])) {
   $searchQuery = $_GET['query'];

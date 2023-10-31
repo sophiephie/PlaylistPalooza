@@ -24,7 +24,8 @@
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
       <!-- Logo on the left (replace this with your logo) -->
-      <a class="navbar-brand" href="#"><img src="images/logo2.png" alt="Playlist Palooza" height="39" width="245" /></a>
+      <a class="navbar-brand" href="index.php"><img src="images/logo2.png" alt="Playlist Palooza" height="39"
+          width="245" /></a>
 
       <!-- Search bar in the center -->
       <form class="d-flex search-bar" action="search.php" method="GET">
@@ -35,19 +36,15 @@
       <div class="navbar-nav">
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link" href="#">About Us</a>
-        <?php
-        session_start();
-        if (isset($_SESSION['user_id'])) {
-          // If the user is logged in, display a "Log Out" link
-          echo '<a class="nav-link" href="/logout.php">Log Out</a>';
-        } else {
-          // If the user is not logged in, display a "Sign In" link
-          echo '<a class="nav-link" href="/Code/login.html">Sign In</a>';
-        }
-        ?>
+        <?php if ($userIsLoggedIn) { ?>
+          <a class="nav-link" href="/logout.php">Sign Out</a>
+        <?php } else { ?>
+          <a class="nav-link" href="/Code/login.html">Sign In</a>
+        <?php } ?>
       </div>
     </div>
   </nav>
+
 </body>
 
 </html>
