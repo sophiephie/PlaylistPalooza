@@ -27,10 +27,9 @@
       <a class="navbar-brand" href="index.php"><img src="images/logo2.png" alt="Playlist Palooza" height="39"
           width="245" /></a>
 
-      <!-- Search bar in the center -->
-      <form class="d-flex search-bar" action="search.php" method="GET">
-        <input class="form-control" type="text" name="query" placeholder="Search" aria-label="Search" />
-      </form>
+      <?php
+      include('search.php');
+      ?>
 
       <!-- Navigation links -->
       <div class="navbar-nav">
