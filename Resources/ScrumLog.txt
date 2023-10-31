@@ -138,7 +138,8 @@ Daily Scrum Log
 	Sophie:
 		
 	Bo Kyung:
-		-created success.php / admin.php - the page where users are redirected to after login
+		-created success.php / admin.php - the pages where users are redirected to after login
+		-added offcanvas sidebar in success.php / admin.php pages
 		-still working with php implement to updateProfile.php file
 	Nicholas:
 
