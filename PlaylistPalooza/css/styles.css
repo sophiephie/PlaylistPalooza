@@ -80,7 +80,7 @@ body {
 }
 
 .btn-primary {
-  border-radius: 25px;
+  border-radius: 25px !important;
 }
 
 .bg-light {
