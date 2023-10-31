@@ -61,6 +61,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         ":adminStatus" => $adminStatus
       ])) {
         // User registration successful
+        // get the user_id of the newly registered user
+        $user_id = $db->lastInsertId();
+
+        // Store the user_id in the session
+        $_SESSION['user_id'] = $userId;
+
         // redirect the user to a success page
         header("Location: index.php");
         exit();

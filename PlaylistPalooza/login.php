@@ -26,6 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
       if (password_verify($password, $data['password'])){ // The email and password match
 
+        // Store the user_id in the session
+        $_SESSION['user_id'] = $userId;
+        
         // Redirect after successful login
         header('location: index.php');
         die();
