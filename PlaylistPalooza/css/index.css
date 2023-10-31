@@ -18,29 +18,20 @@ body {
   font-family: bebas neue;
 }
 
-.eventCardsCon {
-  /* background-color: #fff0df !important; */
-  display: grid;
-}
-
 .eventCards a img {
-  width: 25%;
+  /* width: 25%; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .eventCards figcaption {
-  width: 25%;
+  /* width: 25%; */
   font-family: bebas neue;
   background-color: #8b85898a !important;
   color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-left: 1%;
-}
-
-.loadButton {
-  /* background-color: #fff0df; */
 }
 
 .loadButton button {

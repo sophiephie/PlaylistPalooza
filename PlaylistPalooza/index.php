@@ -1,17 +1,6 @@
 <?php
 require 'includes/dbConnect.php';
 
-$sql = "SELECT * FROM events";
-$data = [];
-$dataArtist = [];
-
-$query = $db->prepare($sql);
-$query->execute($data);
-
-
-$getArtistName = $db->prepare("SELECT * FROM artist");
-$getArtistName->execute($dataArtist);
-
 $artistPic1 = "https://www.evenko.ca/_uploads/event/51087/featured.jpg?v=1670334813";
 $artistPic2 = "https://www.evenko.ca/_uploads/event/57675/featured.jpg?v=1697740433";
 $artistPic3 = "https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863";
@@ -37,10 +26,9 @@ $eventPage3 = "https://www.w3schools.com";
 </head>
 
 <body id="indexBody">
-    <header style="background-color: #b4aaa9;"> <?php include "includes/header.html"; ?> </header
-    >
+    <header> <?php include "includes/header.html"; ?> </header>
 
-    <article style="background-color: #fff0df;" class="slideshow">
+    <article class="slideshow">
         <article class="container">
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
@@ -89,49 +77,70 @@ $eventPage3 = "https://www.w3schools.com";
         </article>
     </article>
 
-    <article class="events">
-        <article class="container-fluid">
-            <section class="eventsHeader mt-4">
-                <h2>Upcoming Events</h2>
-            </section>
+    <article class="events container-fluid">
 
-            <?php while ($row = $query->fetch()) {
+
+        <section class="eventsHeader mt-4">
+            <h2>Upcoming Events</h2>
+        </section>
+
+        <section class="row row-cols-3">
+
+            <?php
+
+
+            // turn this into a function that has to be called??
+
+            $sql = "SELECT * FROM events ORDER BY date";
+
+            $i = 0;
+            $maxValue = 3;
+
+            $query = $db->prepare($sql);
+            $query->execute([]);
+            ?>
+
+            <?php while ($row = $query->fetch() and $i < $maxValue) {
                 $link = "eventPage.php?item=" . $row['eventId'];
 
-                $getArtistTable = $db->prepare("SELECT * FROM artist where artistId = :id");
-                $getArtistTable->execute(['id' => $row['mainArtistId']]);
-                $rowArt = $getArtistTable->fetch();
+                $getMainArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
+                $getMainArtist->execute(['id' => $row['mainArtistId']]);
+                $mainArtist = $getMainArtist->fetch();
+
+                $getOpenArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
+                $getOpenArtist->execute(['id' => $row['openerArtistId']]);
+                $openArtist = $getOpenArtist->fetch();
 
                 $getLocationTable = $db->prepare("SELECT * FROM locations where locationId = :id");
                 $getLocationTable->execute(['id' => $row['location_Id']]);
                 $rowLoc = $getLocationTable->fetch();
 
+                $i++;
             ?>
+                <figure class="eventCards col">
+                    <a href=<?= $link ?>> <img class="img-fluid" src="<?= $mainArtist['imageLink']; ?>" alt="picture_of_artist"></a>
+                    <figcaption>
+                        <h4><?= $rowLoc['locationName']; ?></h4>
+                        <h2><?= $mainArtist['artistName'] ?></h2>
+                        <h3> <?= "with " . $openArtist['artistName']  ?> </h3>
+                        <h4><?= date('F j, Y', strtotime($row['date'])); ?></h4>
+                    </figcaption>
+                </figure>
+            <?php }
+            ?>
+        </section>
 
-                <section class="eventCardsCon container-fluid">
-                    <figure class="eventCards">
-                        <a href=<?= $link ?>> <img src="<?= $rowArt['imageLink']; ?>" alt="artist name"></a>
-                        <figcaption>
-                            <h4><?= $rowLoc['locationName']; ?></h4>
-                            <h2><?= $rowArt['artistName']; ?></h2>
-                            <h4><?= date('F j, Y', strtotime($row['date'])); ?></h4>
-                        </figcaption>
-                    </figure>
-                </section>
-        </article>
+        <section class="loadButton text-center">
+            <button type="button" class="btn btn-dark">Load More</button>
+        </section>
+
     </article>
-<?php }
-?>
 
-<section class="loadButton text-center">
-    <button type="button" class="btn btn-dark">Load More</button>
-</section>
+    <footer>
+        <?php include "includes/footer.html"; ?>
+    </footer>
 
-<footer>
-    <?php include "includes/footer.html"; ?>
-</footer>
-<script src="javascript/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
