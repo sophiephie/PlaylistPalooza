@@ -134,7 +134,7 @@ Daily Scrum Log
 		-finish the homepage, fix the styling, set up load more
 		-styling of the footer icons
 
-30/10/2023
+31/10/2023
 	Sophie:
 		
 	Bo Kyung:
