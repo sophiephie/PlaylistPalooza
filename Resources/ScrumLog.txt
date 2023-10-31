@@ -33,7 +33,7 @@ Daily Scrum Log
 		-Finished Event page and other pages
 		-Fine tuning the wireframe a little more
 		-start coding
-	BK: 
+	Bo Kyung: 
 		-Reviewed and practiced phpMyAdmin database
 		-start coding phase
 
@@ -44,7 +44,7 @@ Daily Scrum Log
 20/10/2023
 	Sophie:
 		-Header, Footer
-	BK:
+	Bo Kyung:
 		-Contact us, User Login/Sign Up
 	Nicholas: 
 		-Homepage, Event page
@@ -58,7 +58,7 @@ Daily Scrum Log
 		-started header and footer
 		-link login in the nav, organize the files, continue on nav and footer
 		-unsure about social media links icon
-	BK: 
+	Bo Kyung: 
 		-started login/signup/contact us page
 		-start php, link header and footer
 
@@ -133,5 +133,13 @@ Daily Scrum Log
 		-homepage, database set up, event page
 		-finish the homepage, fix the styling, set up load more
 		-styling of the footer icons
+
+30/10/2023
+	Sophie:
+		
+	Bo Kyung:
+		-created success.php / admin.php - the page where users are redirected to after login
+		-still working with php implement to updateProfile.php file
+	Nicholas:
 
 		
