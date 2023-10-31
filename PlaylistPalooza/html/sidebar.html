@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Side Bar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <!-------------------->
+    <!-- NAVIGATION BAR -->
+    <!-------------------->
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container">
+        <!-- Logo on the left (replace this with logo) -->
+        <a class="navbar-brand" href="#"
+          ><img
+            src="../images/logo2.png"
+            alt="Playlist Palooza"
+            height="39"
+            width="245"
+        /></a>
+
+        <!-- Search bar in the center -->
+        <form class="d-flex search-bar">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+
+        <!-- Navigation links -->
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="contact.php">Contact Us</a>
+          <a class="nav-link" href="#" id="myAccountLink">My Account</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" id="myAccountSidebar">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">My Account</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>My Tickets</p>
+        <p><a href="../updateProfile.php">My Profile</a></p>
+        <p><a href="../index.php">Sign Out</a></p>
+      </div>
+    </div>
+
+    <script>
+      // Get references to the link and sidebar elements
+      const myAccountLink = document.getElementById("myAccountLink");
+      const myAccountSidebar = new bootstrap.Offcanvas(
+        document.getElementById("myAccountSidebar")
+      );
+
+      // Add a click event listener to the "My Profile" link
+      myAccountLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the link from navigating
+        myAccountSidebar.show(); // Show the sidebar
+      });
+    </script>
+  </body>
+</html>
