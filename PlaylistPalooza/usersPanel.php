@@ -1,3 +1,26 @@
+<?php
+
+include "includes/header.html";
+
+// connect to database
+include "includes/dbConnect.php";
+
+try {
+  // Set the PDO error mode to exception
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $sql = "SELECT * FROM users";
+  $stmt = $db->prepare($sql);
+  $stmt->execute();
+
+  // Fetch all rows as an associative array
+  $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +46,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../css/adminPanel.css" />
+    <link rel="stylesheet" href="css/adminPanel.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -40,9 +63,7 @@
         <div class="table-wrapper">
           <div class="table-title">
             <div class="row">
-              <div class="col-sm-5">
-                <h2>User Management</h2>
-              </div>
+                <h2>Update Users</h2>
             </div>
           </div>
           <table class="table table-striped table-hover">
@@ -61,31 +82,34 @@
             </thead>
             <tbody>
               <tr>
-                <td>userId</td>
-                <td>email</td>
-                <td>password</td>
-                <td>firstName</td>
-                <td>lastName</td>
-                <td>phoneNumber</td>
-                <td>accountStatus</td>
-                <td>adminStatus</td>
-                <td>
-                  <a
-                    href="#"
-                    class="settings"
-                    title="Settings"
-                    data-toggle="tooltip"
-                    ><i class="material-icons">&#xE8B8;</i></a
-                  >
-                  <a
-                    href="#"
-                    class="delete"
-                    title="Delete"
-                    data-toggle="tooltip"
-                    ><i class="material-icons">&#xE5C9;</i></a
-                  >
-                </td>
-              </tr>
+                <?php foreach ($users as $user): ?>
+                <tr>
+                  <td><?php echo $user['userId']; ?></td>
+                  <td><?php echo $user['email']; ?></td>
+                  <td><?php echo $user['password']; ?></td>
+                  <td><?php echo $user['firstName']; ?></td>
+                  <td><?php echo $user['lastName']; ?></td>
+                  <td><?php echo $user['phoneNumber']; ?></td>
+                  <td><?php echo $user['accountStatus']; ?></td>
+                  <td><?php echo $user['adminStatus']; ?></td>
+                  <td>
+                   <a
+                      href="edit_users.php?id=<?php echo $user['userId']; ?>" 
+                      class="edit"
+                      title="Edit"
+                      data-toggle="tooltip"
+                      ><i class="material-icons">&#xE8B8;</i>
+                    </a>
+                    <a
+                      href="delete_users.php?id=<?php echo $user['userId']; ?>"
+                      class="delete"
+                      title="Delete"
+                      data-toggle="tooltip"
+                      ><i class="material-icons">&#xE5C9;</i>
+                    </a>
+                  </td>
+               </tr>
+               <?php endforeach; ?>
             </tbody>
           </table>
         </div>
@@ -93,3 +117,5 @@
     </div>
   </body>
 </html>
+
+<?php include "includes/footer.html"; ?>

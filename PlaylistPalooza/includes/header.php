@@ -7,7 +7,7 @@
   <!-- Add Bootstrap CSS link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <!-- Link to your custom CSS file -->
-  <link rel="stylesheet" href="/Code/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Link to google font api -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,9 +36,9 @@
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link" href="#">About Us</a>
         <?php if ($userIsLoggedIn) { ?>
-          <a class="nav-link" href="/logout.php">Sign Out</a>
+          <a class="nav-link" href="logout.php">Sign Out</a>
         <?php } else { ?>
-          <a class="nav-link" href="/Code/login.html">Sign In</a>
+          <a class="nav-link" href="login.html">Sign In</a>
         <?php } ?>
       </div>
     </div>
