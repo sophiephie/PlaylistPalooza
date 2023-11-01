@@ -135,15 +135,16 @@ Daily Scrum Log
 		-styling of the footer icons
 
 31/10/2023
-	Sophie:
-		
 	Bo Kyung:
 		-created success.php / admin.php - the pages where users are redirected to after login
 		-added offcanvas sidebar in success.php / admin.php pages
 		-still working with php implement to updateProfile.php file
 	Nicholas:
 		- Removed unnecessary elements from eventPage
-		- Added loadMore function to index.php
-		- issues with loadMore function in index.php / issues with AJAX implementation
 
-		
+01/11/2023
+	Bo Kyung:
+		-finished implementing functions on updateProfile.php
+		-updated success.php / admin.php and sidebar 
+		-created admin panel html
+		-working with php implement to adminPanel.php file	

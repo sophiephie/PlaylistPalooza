@@ -186,8 +186,9 @@ $eventPage3 = "https://www.w3schools.com";
         ></button>
       </div>
       <div class="offcanvas-body">
-          <p><a href="updateProfile.php">Update Event</a></p>
-          <p><a href="index.php">Sign Out</a></p>
+          <p><a href="usersPanel.php">Update Users</a></p>
+          <p><a href="#">Update Event</a></p>
+          <p><a href="logout.php">Sign Out</a></p>
       </div>
     </div>
 

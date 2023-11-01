@@ -14,6 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errorMessage = "Please fill in all the required fields.";
   }
 
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $errorMessages = "Please enter a valid email address. <br/>";
+  }
+
   // Process the form data if there are no errors.
   if (empty($errorMessage)) {
     $successMessage = "Thank you for your submission!";

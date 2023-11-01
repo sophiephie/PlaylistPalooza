@@ -26,11 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
       if (password_verify($password, $data['password'])){ // The email and password match
 
-        // Store the user_id in the session
-        $_SESSION['user_id'] = $userId;
-        
+        // Store the user info in the session
+        $_SESSION['user_id'] = $data['userId'];
+        $_SESSION['name'] = $data['firstName'];
+
         // Redirect after successful login
-        header('location: success.php');
+        if($data['adminStatus'] == 0){
+          header('location: success.php');
+        }elseif($data['adminStatus'] == 1){
+          header('location: admin.php');
+        }
         die();
       } else { // Password does not match
         $errorMessages = "Invalid email or password.";
