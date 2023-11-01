@@ -17,7 +17,7 @@ $eventDate = "November 21, 2023";
 </head>
 
 <body>
-    <header> <?php include "includes/header.html"; ?> </header>
+    <header> <?php include "includes/header.php"; ?> </header>
 
     <article style="background-color: #fff0df;" class="event container-fluid">
         <article class="row text-center">
