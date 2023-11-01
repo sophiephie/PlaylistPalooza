@@ -142,5 +142,8 @@ Daily Scrum Log
 		-added offcanvas sidebar in success.php / admin.php pages
 		-still working with php implement to updateProfile.php file
 	Nicholas:
+		- Removed unnecessary elements from eventPage
+		- Added loadMore function to index.php
+		- issues with loadMore function in index.php / issues with AJAX implementation
 
 		
