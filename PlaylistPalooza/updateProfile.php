@@ -5,30 +5,50 @@ include "includes/header.html";
 // connect to database
 include "includes/dbConnect.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$successMessages = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+  $errorMessages = "";
+
   // Handle password update
-  if (isset($_POST['password'])) {
+  if (isset($_POST['updatePassword'])) {
       $newPassword = $_POST['password'];
+      $passwordAgain = $_POST['passwordAgain'];
 
-      // Assuming $newPassword contains the new password
-      $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+      // Check if the password and passwordAgain match
+      if ($newPassword == $passwordAgain) {
+        
+        // Assuming $newPassword contains the new password
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-      // Get the user's ID from the session
-      $userId = $_SESSION['user_id'];
+        // Get the user's ID from the session
+        $userId = $_SESSION['user_id'];
 
-      $sql = "UPDATE users SET password = :password WHERE userId = :id";
-      $stmt = $db->prepare($sql);
-      $stmt->bindParam(':password', $hashedPassword);
-      $stmt->bindParam(':id', $userId);
-      $stmt->execute();
+        $sql = "UPDATE users SET password = :password WHERE userId = :id";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+
+        $successMessages = "Password successfully updated!";
+      }else{
+        // password and passwordAgain don't match, handle the error as needed
+        $errorMessages = "Password do not match.";
+      }  
   }
 
   // Handle name update
-  if (isset($_POST['firstName']) && isset($_POST['lastName'])) {
+  if (isset($_POST['updateName'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
+
+    // Validate that both first name and last name are not empty
+    if (empty($firstName) || empty($lastName)) {
+      $errorMessages = "Please enter your first name and last name.";
+    } else {
     
-    // Update the user's name in the database
+    // Get the user's ID from the session
     $userId = $_SESSION['user_id'];
 
     $sql = "UPDATE users SET firstName = :firstName, lastName = :lastName WHERE userId = :id";
@@ -37,13 +57,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':lastName', $lastName);
     $stmt->bindParam(':id', $userId);
     $stmt->execute();
+
+    $successMessages = "Name successfully updated!";
+   }
   }
-  
+
   // Handle phone number update
-  if (isset($_POST['phoneNumber'])) {
+  if (isset($_POST['updatePhoneNumber'])) {
       $phoneNumber = $_POST['phoneNumber'];
-      
-      // Update the user's phone number in the database
+
+      // Validate that phone number is not empty
+      if (empty($phoneNumber)) {
+        $errorMessages = "Please enter your phone number.";
+      } else {
+
+      // Get the user's ID from the session
       $userId = $_SESSION['user_id'];
       
       $sql = "UPDATE users SET phoneNumber = :phoneNumber WHERE userId = :id";
@@ -51,9 +79,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->bindParam(':phoneNumber', $phoneNumber);
       $stmt->bindParam(':id', $userId);
       $stmt->execute();
+
+      $successMessages = "Phone number successfully updated!";
+   }
   }
 }
-
 
 ?>
 
@@ -79,6 +109,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Update Profile</h2>
 
+        <!-- display the success message if there's any -->
+        <?php if(!empty($successMessages)){ ?>
+          <div class="alert alert-success">
+            <?php echo $successMessages; ?>
+          </div>
+        <?php } ?>
+        <br/>
+
+        <!-- display the error message if there's any -->
+        <?php if(!empty($errorMessages)){ ?>
+          <div class="alert alert-danger">
+            <?php echo $errorMessages; ?>
+          </div>
+        <?php } ?>
+        <br/>
+
         <!-- password -->
         <div class="form-outline mb-4">
           <input
@@ -98,11 +144,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="passwordAgain"
             class="form-control form-control-lg"
           />
-          <label class="form-label" for="passwordAgian">Repeat Password</label>
+          <label class="form-label" for="passwordAgain">Repeat Password</label>
         </div>
 
         <!-- submit button-->
-        <button class="btn btn-primary" type="submit">Update Password</button>
+        <button class="btn btn-primary" type="submit" name="updatePassword">Update Password</button>
         <br />
         <br />
         <br />
@@ -134,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <!-- submit button-->
-        <button class="btn btn-primary" type="submit">Update Name</button>
+        <button class="btn btn-primary" type="submit" name="updateName">Update Name</button>
         <br />
         <br />
         <br />
@@ -151,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <!-- submit button-->
-        <button class="btn btn-primary" type="submit">
+        <button class="btn btn-primary" type="submit" name="updatePhoneNumber">
           Update Phone Number
         </button>
         <br />
@@ -160,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- link to homepage -->
         <div class="homepage">
-          <p><a href="index.php">Go Back to Homepage</a></p>
+          <p><a href="success.php">Go Back to Homepage</a></p>
         </div>
       </form>
     </div>

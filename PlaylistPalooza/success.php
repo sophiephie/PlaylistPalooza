@@ -31,7 +31,7 @@ $eventPage3 = "https://www.w3schools.com";
     <nav class="navbar navbar-expand-lg custom-navbar">
       <div class="container">
         <!-- Logo on the left (replace this with logo) -->
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="success.php"
           ><img
             src="images/logo2.png"
             alt="Playlist Palooza"
@@ -51,7 +51,7 @@ $eventPage3 = "https://www.w3schools.com";
 
         <!-- Navigation links -->
         <div class="navbar-nav">
-          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="success.php">Home</a>
           <a class="nav-link" href="contact.php">Contact Us</a>
           <a class="nav-link" href="#" id="myAccountLink">My Account</a>
         </div>
@@ -186,9 +186,11 @@ $eventPage3 = "https://www.w3schools.com";
         ></button>
       </div>
       <div class="offcanvas-body">
+          <p>Welcome! <?=$_SESSION['name']?></p>
+          <br/>
           <p><a href="#">My Tickets</a></p>
           <p><a href="updateProfile.php">Update Profile</a></p>
-          <p><a href="index.php">Sign Out</a></p>
+          <p><a href="logout.php">Sign Out</a></p>
       </div>
     </div>
 
