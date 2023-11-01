@@ -1,17 +1,6 @@
 <?php
 require 'includes/dbConnect.php';
-
-$artistPic1 = "https://www.evenko.ca/_uploads/event/51087/featured.jpg?v=1670334813";
-$artistPic2 = "https://www.evenko.ca/_uploads/event/57675/featured.jpg?v=1697740433";
-$artistPic3 = "https://www.evenko.ca/_uploads/event/57640/featured.jpg?v=1696253863";
-$artistName1 = "Artist_Name_1";
-$artistName2 = "Artist_Name_2";
-$artistName3 = "Artist_Name_3";
-$eventPage1 = "https://www.w3schools.com";
-$eventPage2 = "https://www.w3schools.com";
-$eventPage3 = "https://www.w3schools.com";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,35 +25,62 @@ $eventPage3 = "https://www.w3schools.com";
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
+
+
+                <?php
+                $sql = "SELECT * FROM events where eventId = 1 or 3 or 5";
+                $query = $db->prepare($sql);
+                $query->execute();
+
+                for ($i = 0; $row = $query->fetch(); $i++) {
+                    $getMainArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
+                    $getMainArtist->execute(['id' => $row['mainArtistId']]);
+                    $mainArtist = $getMainArtist->fetch();
+
+                    $getOpenArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
+                    $getOpenArtist->execute(['id' => $row['openerArtistId']]);
+                    $openArtist = $getOpenArtist->fetch();
+
+                    $getLocationTable = $db->prepare("SELECT * FROM locations where locationId = :id");
+                    $getLocationTable->execute(['id' => $row['location_Id']]);
+                    $rowLoc = $getLocationTable->fetch();
+
+                    $link[$i] = "eventPage.php?item=" . $row['eventId'];
+                    $artistImages[$i] = $mainArtist['imageLink'];
+                    $mainArtistName[$i] = $mainArtist['artistName'];
+                    $openArtistName[$i] = $openArtist['artistName'];
+                }
+                ?>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href="<?= $eventPage1 ?>"> <img src="<?= $artistPic1 ?>" class="d-block w-100" alt="..." /> </a>
+                        <a href="<?= $link[0] ?>"> <img src="<?= $artistImages[0] ?>" class="d-block w-100" alt="picture_of_artist1" /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5><?= $artistName1 ?></h5>
+                            <h5><?= $mainArtistName[0] ?></h5>
                             <p>
-                                Some representative placeholder content for the first slide.
+                                with <?= $openArtistName[0] ?>
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="<?= $eventPage2 ?>"> <img src="<?= $artistPic2 ?>" class="d-block w-100" alt="..." /> </a>
+                        <a href="<?= $link[1] ?>"> <img src="<?= $artistImages[1] ?>" class="d-block w-100" alt="picture_of_artist2" /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5><?= $artistName1 ?></h5>
+                            <h5><?= $mainArtistName[1] ?></h5>
                             <p>
-                                Some representative placeholder content for the second slide.
+                                with <?= $openArtistName[1] ?>
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="<?= $eventPage3 ?>"> <img src="<?= $artistPic3 ?>" class="d-block w-100" alt="..." /> </a>
+                        <a href="<?= $link[2] ?>"> <img src="<?= $artistImages[2] ?>" class="d-block w-100" alt="picture_of_artist3" /> </a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5><?= $artistName1 ?></h5>
+                            <h5><?= $mainArtistName[2] ?></h5>
                             <p>
-                                Some representative placeholder content for the third slide.
+                                with <?= $openArtistName[2] ?>
                             </p>
                         </div>
                     </div>
                 </div>
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -86,17 +102,11 @@ $eventPage3 = "https://www.w3schools.com";
         <section id="eventSection" class="row row-cols-3">
 
             <?php
-
-
-            // turn this into a function that has to be called??
-
             $sql = "SELECT * FROM events ORDER BY date limit 0,3";
-
             $query = $db->prepare($sql);
             $query->execute();
-            ?>
 
-            <?php while ($row = $query->fetch()) {
+            while ($row = $query->fetch()) {
                 $link = "eventPage.php?item=" . $row['eventId'];
 
                 $getMainArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
