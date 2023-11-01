@@ -140,7 +140,9 @@ Daily Scrum Log
 		-added offcanvas sidebar in success.php / admin.php pages
 		-still working with php implement to updateProfile.php file
 	Nicholas:
-		- Removed unnecessary elements from eventPage
+		-Started implementing loadMore function
+		-Removed unnecessary elements from eventPage
+		-issues with AJAX requests for loadMore function
 
 01/11/2023
 	Bo Kyung:
@@ -148,3 +150,7 @@ Daily Scrum Log
 		-updated success.php / admin.php and sidebar 
 		-created admin panel html
 		-working with php implement to adminPanel.php file	
+	Nicholas:
+		-Finished load more function on index.php
+		-finished slideshow on index.php
+		-Added database fetching to eventPage.php
