@@ -1,4 +1,41 @@
 <?php
+require "includes/dbConnect.php";
+
+// check that GET has an item
+if (!isset($_GET['item'])) {
+    // the GET does NOT have a key named item
+    pageNotFound();
+}
+
+// there is a $_GET['item'] that exists
+$sql =
+    "SELECT 
+        e.eventId, 
+        e.mainArtistId, 
+        mart.artistName as mainName, 
+        e.openerArtistId, 
+        oart.artistName as openName,
+        e.location_Id,
+        l.locationName,
+        e.date,
+        e.time,
+        e.price,
+        mart.imageLink
+    FROM events AS e 
+    LEFT JOIN artist AS mart ON mart.artistId = e.mainArtistId 
+    LEFT JOIN artist AS oart ON oart.artistId = e.openerArtistId
+    JOIN locations as l on l.locationId = e.location_Id
+    WHERE eventId = :id";
+
+$query = $db->prepare($sql);
+$query->execute(['id' => $_GET['item']]);
+
+$result = $query->fetch(); // fetch single row from db
+if (!$result) { // nothing found in the database
+    pageNotFound();
+}
+
+
 $mainArtistName = " Main Artist Name";
 $openerArtistName = "with " . "Opening Act";
 $eventLocation = "Place Bell Laval";
@@ -21,13 +58,12 @@ $eventDate = "November 21, 2023";
 
     <article style="background-color: #fff0df;" class="event container-fluid">
         <article class="row text-center">
-            <img src="https://www.evenko.ca/_uploads/event/57675/featured.jpg?v=1697740433" alt="artist" class="container col-md-6 ">
+            <img src=<?= $result['imageLink'] ?> alt="artist" class="container col-md-6 ">
             <section id="eventInfo" class="col-md-6">
-                <h2> <?= $mainArtistName ?> </h2>
-                <h5> <?= $openerArtistName ?> </h5>
-                <h4> <?= $eventLocation ?> </h4>
-                <h4> <?= $eventDate ?> </h4>
-
+                <h2> <?= $result['mainName'] ?> </h2>
+                <h5> <?= "with " . $result['openName'] ?> </h5>
+                <h4> <?= $result['locationName'] ?> </h4>
+                <h4> <?= date('F j, Y', strtotime($result['date'])) . " at " . $result['time'] ?> </h4>
                 <a href="checkout.php"> <button type="button" class="btn btn-dark">Purchase Tickets</button> </a>
             </section>
         </article>
