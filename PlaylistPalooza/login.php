@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         $_SESSION['user_id'] = $userId;
         
         // Redirect after successful login
-        header('location: index.php');
+        header('location: success.php');
         die();
       } else { // Password does not match
         $errorMessages = "Invalid email or password.";
