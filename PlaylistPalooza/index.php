@@ -26,7 +26,7 @@ $eventPage3 = "https://www.w3schools.com";
 </head>
 
 <body id="indexBody">
-    <header> <?php include "includes/header.html"; ?> </header>
+    <header> <?php include "includes/header.php"; ?> </header>
 
     <article class="slideshow">
         <article class="container">
@@ -79,28 +79,24 @@ $eventPage3 = "https://www.w3schools.com";
 
     <article class="events container-fluid">
 
-
         <section class="eventsHeader mt-4">
             <h2>Upcoming Events</h2>
         </section>
 
-        <section class="row row-cols-3">
+        <section id="eventSection" class="row row-cols-3">
 
             <?php
 
 
             // turn this into a function that has to be called??
 
-            $sql = "SELECT * FROM events ORDER BY date";
-
-            $i = 0;
-            $maxValue = 3;
+            $sql = "SELECT * FROM events ORDER BY date limit 0,3";
 
             $query = $db->prepare($sql);
-            $query->execute([]);
+            $query->execute();
             ?>
 
-            <?php while ($row = $query->fetch() and $i < $maxValue) {
+            <?php while ($row = $query->fetch()) {
                 $link = "eventPage.php?item=" . $row['eventId'];
 
                 $getMainArtist = $db->prepare("SELECT * FROM artist where artistId = :id");
@@ -114,8 +110,6 @@ $eventPage3 = "https://www.w3schools.com";
                 $getLocationTable = $db->prepare("SELECT * FROM locations where locationId = :id");
                 $getLocationTable->execute(['id' => $row['location_Id']]);
                 $rowLoc = $getLocationTable->fetch();
-
-                $i++;
             ?>
                 <figure class="eventCards col">
                     <a href=<?= $link ?>> <img class="img-fluid" src="<?= $mainArtist['imageLink']; ?>" alt="picture_of_artist"></a>
@@ -131,7 +125,7 @@ $eventPage3 = "https://www.w3schools.com";
         </section>
 
         <section class="loadButton text-center">
-            <button type="button" class="btn btn-dark">Load More</button>
+            <button type="button" id="loadMoreBtn" class="btn btn-dark">Load More</button>
         </section>
 
     </article>
@@ -141,6 +135,7 @@ $eventPage3 = "https://www.w3schools.com";
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>
