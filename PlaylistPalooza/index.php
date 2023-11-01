@@ -28,7 +28,7 @@ require 'includes/dbConnect.php';
 
 
                 <?php
-                $sql = "SELECT * FROM events where eventId = 1 or 3 or 5";
+                $sql = "SELECT * FROM events where eventId IN (1,3,5)";
                 $query = $db->prepare($sql);
                 $query->execute();
 
