@@ -158,3 +158,9 @@ Daily Scrum Log
 		-advance in search function and checkoutpage
 		-Continue working on those pages
 		-Fixing constant crash in MAMP
+
+02/11/2023
+	Bo Kyung:
+		-finished admin panel for managing users
+		-created admin panel for managing events and implemented php functions to eventsPanel.php
+		-merged sidebar functions to header.php and deleted success.php
