@@ -154,3 +154,7 @@ Daily Scrum Log
 		-Finished load more function on index.php
 		-finished slideshow on index.php
 		-Added database fetching to eventPage.php
+	Sophie:
+		-advance in search function and checkoutpage
+		-Continue working on those pages
+		-Fixing constant crash in MAMP
