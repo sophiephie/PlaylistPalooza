@@ -34,11 +34,11 @@
       <!-- Navigation links -->
       <div class="navbar-nav">
         <a class="nav-link" href="index.php">Home</a>
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="contact.php">Contact Us</a>
         <?php if ($userIsLoggedIn) { ?>
           <a class="nav-link" href="logout.php">Sign Out</a>
         <?php } else { ?>
-          <a class="nav-link" href="login.html">Sign In</a>
+          <a class="nav-link" href="login.php">Sign In</a>
         <?php } ?>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <?php 
 
-include "includes/header.html";
+include "includes/header.php";
 
 // connect to database
 include "includes/dbConnect.php";

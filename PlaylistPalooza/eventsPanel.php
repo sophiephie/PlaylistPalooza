@@ -9,12 +9,15 @@ try {
   // Set the PDO error mode to exception
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $sql = "SELECT * FROM users";
+  $sql = "SELECT e.eventId, a.artistName, l.locationName, g.genreName, e.date, e.time, e.price FROM events e
+          INNER JOIN artist a ON e.mainArtistId = a.artistId
+          INNER JOIN locations l ON e.location_Id = l.locationId
+          INNER JOIN genres g ON e.musicalGenre = g.genreId";
   $stmt = $db->prepare($sql);
   $stmt->execute();
 
   // Fetch all rows as an associative array
-  $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
@@ -29,7 +32,7 @@ try {
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Users Management Data Table</title>
+    <title>Events Management Data Table</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
@@ -63,45 +66,43 @@ try {
         <div class="table-wrapper">
           <div class="table-title">
             <div class="row">
-                <h2>Users Management</h2>
+                <h2>Events Management</h2>
             </div>
           </div>
           <table class="table table-striped table-hover">
             <thead>
               <tr>
-                <th>User ID</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone Number</th>
-                <th>Account Status</th>
-                <th>Admin Status</th>
+                <th>Event ID</th>
+                <th>Artist Name</th>
+                <th>Location Name</th>
+                <th>Genre Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Price</th>
                 <th>Update</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($events as $event): ?>
                 <tr>
-                  <td><?php echo $user['userId']; ?></td>
-                  <td><?php echo $user['email']; ?></td>
-                  <td><?php echo $user['password']; ?></td>
-                  <td><?php echo $user['firstName']; ?></td>
-                  <td><?php echo $user['lastName']; ?></td>
-                  <td><?php echo $user['phoneNumber']; ?></td>
-                  <td><?php echo $user['accountStatus']; ?></td>
-                  <td><?php echo $user['adminStatus']; ?></td>
+                  <td><?php echo $event['eventId']; ?></td>
+                  <td><?php echo $event['artistName']; ?></td>
+                  <td><?php echo $event['locationName']; ?></td>
+                  <td><?php echo $event['genreName']; ?></td>
+                  <td><?php echo $event['date']; ?></td>
+                  <td><?php echo $event['time']; ?></td>
+                  <td><?php echo $event['price']; ?></td>
                   <td>
                    <a
-                      href="edit_users.php?id=<?php echo $user['userId']; ?>" 
+                      href="edit_events.php?id=<?php echo $event['eventId']; ?>" 
                       class="edit"
                       title="Edit"
                       data-toggle="tooltip"
                       ><i class="material-icons">&#xE8B8;</i>
                     </a>
                     <a
-                      href="delete_users.php?id=<?php echo $user['userId']; ?>"
+                      href="delete_events.php?id=<?php echo $event['eventId']; ?>"
                       class="delete"
                       title="Delete"
                       data-toggle="tooltip"

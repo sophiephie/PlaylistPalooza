@@ -1,6 +1,6 @@
 <?php
 
-include "includes/header.html";
+include "includes/header.php";
 include "includes/dbConnect.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>User Management Data Table</title>
+    <title>Users Management Data Table</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
           <div class="table-title">
             <div class="row">
               <div class="col-sm-5">
-                <h2>User Management</h2>
+                <h2>Users Management</h2>
               </div>
             </div>
           </div>
