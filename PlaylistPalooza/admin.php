@@ -51,8 +51,7 @@ $eventPage3 = "https://www.w3schools.com";
 
         <!-- Navigation links -->
         <div class="navbar-nav">
-          <a class="nav-link" href="index.php">Home</a>
-          <a class="nav-link" href="contact.php">Contact Us</a>
+          <a class="nav-link" href="admin.php">Home</a>
           <a class="nav-link" href="#" id="myAccountLink">Admin</a>
         </div>
       </div>

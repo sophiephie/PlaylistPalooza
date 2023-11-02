@@ -38,7 +38,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link" href="contact.php">Contact Us</a>
-        <?php if ($_SESSION['loggedIn'] ?? false) { ?>
+        <?php if ($_SESSION['loggedIn'] ?? false) { ?> 
           <a class="nav-link" href="#" id="myAccountLink">My Account</a>
         <?php } else { ?>
           <a class="nav-link" href="login.php">Sign In</a>
