@@ -26,13 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
       if (password_verify($password, $data['password'])){ // The email and password match
 
+        $_SESSION['loggedIn'] = true;
+
         // Store the user info in the session
         $_SESSION['user_id'] = $data['userId'];
         $_SESSION['name'] = $data['firstName'];
 
         // Redirect after successful login
         if($data['adminStatus'] == 0){
-          header('location: success.php');
+          header('location: index.php');
         }elseif($data['adminStatus'] == 1){
           header('location: admin.php');
         }

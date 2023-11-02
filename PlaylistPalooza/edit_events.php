@@ -6,20 +6,20 @@ include "includes/dbConnect.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle form submission to update event data
     $eventId = $_POST['eventId'];
-    $artistName = $_POST['artistName'];
-    $locationId = $_POST['locationId'];
-    $genreId = $_POST['genreId'];
+    $mainArtistId = $_POST['mainArtistId'];
+    $location_Id = $_POST['location_Id'];
+    $musicalGenre = $_POST['musicalGenre'];
     $date = $_POST['date'];
     $time = $_POST['time'];
     $price = $_POST['price'];
     
     // Update event data in the database
-    $sql = "UPDATE events SET mainArtistId = :artistId, location_Id = :locationId, musicalGenre = :genreId, date = :date, time = :time, price = :price WHERE eventId = :eventId";
+    $sql = "UPDATE events SET mainArtistId = :mainArtistId, location_Id = :location_Id, musicalGenre = :musicalGenre, date = :date, time = :time, price = :price WHERE eventId = :eventId";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':eventId', $eventId);
-    $stmt->bindParam(':artistId', $artistName);
-    $stmt->bindParam(':locationId', $locationName);
-    $stmt->bindParam(':genreId', $genreName);
+    $stmt->bindParam(':mainArtistId', $mainArtistId);
+    $stmt->bindParam(':location_Id', $location_Id);
+    $stmt->bindParam(':musicalGenre', $musicalGenre);
     $stmt->bindParam(':date', $date);
     $stmt->bindParam(':time', $time);
     $stmt->bindParam(':price', $price);
@@ -132,9 +132,9 @@ if (isset($_GET['id'])) {
                <tr class="edit-form">
                 <form action="edit_events.php" method="post">
                       <td><input type="hidden" name="eventId" value="<?php echo $event['eventId']; ?>"></td>
-                      <td><input type="text" name="artistName" value="<?php echo $event['mainArtistId']; ?>"></td>
-                      <td><input type="text" name="locationName" value="<?php echo $event['location_Id']; ?>"></td>
-                      <td><input type="text" name="genreName" value="<?php echo $event['musicalGenre']; ?>"></td>
+                      <td><input type="text" name="mainArtistId" value="<?php echo $event['mainArtistId']; ?>"></td>
+                      <td><input type="text" name="location_Id" value="<?php echo $event['location_Id']; ?>"></td>
+                      <td><input type="text" name="musicalGenre" value="<?php echo $event['musicalGenre']; ?>"></td>
                       <td><input type="text" name="date" value="<?php echo $event['date']; ?>"></td>
                       <td><input type="text" name="time" value="<?php echo $event['time']; ?>"></td>
                       <td><input type="text" name="price" value="<?php echo $event['price']; ?>"></td>

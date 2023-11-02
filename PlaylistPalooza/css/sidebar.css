@@ -22,3 +22,7 @@
   color: #ffd88a;
   display: inline-block;
 }
+
+.offcanvas-body p {
+  text-align: left;
+}

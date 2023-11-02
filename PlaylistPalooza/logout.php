@@ -1,8 +1,6 @@
 <?php
 
-// connect to database
-include "includes/dbConnect.php";
-
+session_start();
 session_destroy();
 
 // Redirect to the login page:

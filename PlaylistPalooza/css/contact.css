@@ -6,7 +6,6 @@
 
 .main {
   padding: 150px;
-  text-align: center;
   color: white;
   background-image: url(../images/background.jpg);
   background-size: cover;
@@ -22,7 +21,6 @@
 .vision {
   background-color: white;
   padding: 80px;
-  text-align: center;
 }
 
 .vision p {
@@ -35,14 +33,9 @@
   font-family: "Montserrat";
 }
 
-p {
-  text-align: center;
-}
-
 .info {
   background-color: #b4aaa9;
   padding: 80px;
-  text-align: center;
   font-family: "Montserrat";
 }
 
@@ -115,9 +108,5 @@ p {
   .info-column {
     width: 100%; /* Full width for value columns on smaller screens */
     margin: 10px 0; /* Adjust margins for spacing */
-  }
-
-  .info-card {
-    text-align: center; /* Center value cards on smaller screens */
   }
 }
