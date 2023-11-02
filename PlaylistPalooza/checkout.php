@@ -1,4 +1,5 @@
 <?php
+require 'includes/dbConnect.php';
 include "includes/header.php";
 ?>
 <!DOCTYPE html>
