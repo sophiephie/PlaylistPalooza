@@ -1,6 +1,6 @@
 <?php
 
-include "includes/header.php";
+include "includes/adminHeader.php";
 include "includes/dbConnect.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

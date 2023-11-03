@@ -1,6 +1,6 @@
 <?php
 
-include "includes/header.php";
+include "includes/adminHeader.php";
 
 // connect to database
 include "includes/dbConnect.php";

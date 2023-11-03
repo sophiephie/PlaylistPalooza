@@ -1,5 +1,6 @@
 <?php
 require 'includes/dbConnect.php';
+include 'includes/adminHeader.php';
 
 $artistPic1 = "https://www.evenko.ca/_uploads/event/51087/featured.jpg?v=1670334813";
 $artistPic2 = "https://www.evenko.ca/_uploads/event/57675/featured.jpg?v=1697740433";
@@ -26,37 +27,6 @@ $eventPage3 = "https://www.w3schools.com";
 </head>
 
 <body id="indexBody">
-
-    <header>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-      <div class="container">
-        <!-- Logo on the left (replace this with logo) -->
-        <a class="navbar-brand" href="#"
-          ><img
-            src="images/logo2.png"
-            alt="Playlist Palooza"
-            height="39"
-            width="245"
-        /></a>
-
-        <!-- Search bar in the center -->
-        <form class="d-flex search-bar">
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-
-        <!-- Navigation links -->
-        <div class="navbar-nav">
-          <a class="nav-link" href="admin.php">Home</a>
-          <a class="nav-link" href="#" id="myAccountLink">Admin</a>
-        </div>
-      </div>
-    </nav>
-    </header>
 
     <!-- MAIN INDEX -->
     <article class="slideshow">
@@ -173,41 +143,6 @@ $eventPage3 = "https://www.w3schools.com";
         <?php include "includes/footer.html"; ?>
     </footer>
 
-    <!-- Side Bar -->
-
-    <div class="offcanvas offcanvas-end" id="myAccountSidebar">
-      <div class="offcanvas-header">
-        <h1 class="offcanvas-title">Admin</h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-          <p><a href="usersPanel.php">Update Users</a></p>
-          <p><a href="eventsPanel.php">Update Event</a></p>
-          <p><a href="logout.php">Sign Out</a></p>
-      </div>
-    </div>
-
-    <!-- Include Bootstrap JavaScript library -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <!-- Add the JavaScript code for the sidebar interaction -->
-    <script>
-    // Get references to the link and sidebar elements
-    const myAccountLink = document.getElementById("myAccountLink");
-    const myAccountSidebar = new bootstrap.Offcanvas(
-    document.getElementById("myAccountSidebar")
-    );
-
-    // Add a click event listener to the "My Account" link
-    myAccountLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent the link from navigating
-    myAccountSidebar.show(); // Show the sidebar
-    });
-  </script>
 </body>
 
 </html>
