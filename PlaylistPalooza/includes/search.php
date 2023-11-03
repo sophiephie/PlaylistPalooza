@@ -1,9 +1,13 @@
 <?php
+// Check if the search form has ben submitted
 if (isset($_POST['search'])) {
+  // Retrieve the search query from the form input
   $search = $_POST['search'];
+  // Check if the search query is not empty
   if (!empty($search)) {
     header("location: searchResult.php?search={$search}");
   } else {
+    // Error message if the search query is empty
     $searchErr = "Please enter the artist name";
   }
 }
