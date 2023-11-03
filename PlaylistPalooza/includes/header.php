@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -59,7 +57,7 @@
         <?= $_SESSION['name'] ?>
       </p>
       <br />
-      <p><a href="#">My Tickets</a></p>
+      <p><a href="tickets.php">My Tickets</a></p>
       <p><a href="updateProfile.php">Update Profile</a></p>
       <p><a href="logout.php">Sign Out</a></p>
     </div>
