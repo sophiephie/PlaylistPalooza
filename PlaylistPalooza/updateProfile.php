@@ -1,9 +1,9 @@
 <?php 
 
-include "includes/header.php";
-
 // connect to database
 include "includes/dbConnect.php";
+
+include "includes/header.php";
 
 $successMessages = "";
 

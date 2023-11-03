@@ -20,7 +20,7 @@
 }
 
 .vision {
-  background-color: white;
+  background-color: #fff0df;
   padding: 80px;
 }
 
@@ -87,12 +87,17 @@
   align-items: center;
   justify-content: center;
   font-family: "Montserrat";
+  background-color: #fff0df;
 }
 
 .contact {
   max-width: 600px;
   width: 80%;
   margin: 20px;
+}
+
+.contact h2 {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
