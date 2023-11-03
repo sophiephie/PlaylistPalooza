@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/signup.css" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
@@ -88,10 +88,9 @@
         </div>
 
         <!-- submit button-->
-        <br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">
-          Sign Up
-        </button>
+        <div class="d-grid gap-2">
+          <button class="btn btn-lg btn-primary" type="submit">Sign Up</button>
+        </div>
 
         <!-- link to login page -->
         <div class="login">

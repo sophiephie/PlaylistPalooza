@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
     />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
