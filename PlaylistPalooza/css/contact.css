@@ -16,6 +16,7 @@
   font-family: "Bebas Neue";
   font-weight: bold;
   font-size: 100px;
+  text-align: center;
 }
 
 .vision {
@@ -27,10 +28,12 @@
   font-size: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
+  text-align: center;
 }
 
 .vision h2 {
   font-family: "Montserrat";
+  text-align: center;
 }
 
 .info {
@@ -55,6 +58,7 @@
 
 .info-card {
   margin: 8px;
+  text-align: center;
 }
 
 .info-container {
