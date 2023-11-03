@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login Page</title>
   <link rel="stylesheet" href="css/login.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 </head>
 
@@ -82,9 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <input type="password" class="form-control" name="password" placeholder="Password" id="password" />
 
       <!-- submit button-->
-      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
-        Login
-      </button>
+      <div class="d-grid gap-2">
+        <button class="btn btn-lg btn-primary" type="submit">Login</button>
+      </div>
 
       <!-- link to sign up page -->
       <div class="signup">
