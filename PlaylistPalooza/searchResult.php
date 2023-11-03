@@ -57,7 +57,7 @@ include "includes/header.php";
                 <p class="card-text">Event Location:
                   <?php echo $result['locationName']; ?>
                 </p>
-                <a href="eventPage.php?eventId=<?php echo $result['eventId']; ?>" class="btn btn-primary">View Event</a>
+                <a href="eventPage.php?item=<?php echo $result['eventId']; ?>" class="btn btn-primary">View Event</a>
               </div>
             </div>
           </div>
