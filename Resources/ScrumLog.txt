@@ -164,3 +164,9 @@ Daily Scrum Log
 		-finished admin panel for managing users
 		-created admin panel for managing events and implemented php functions to eventsPanel.php
 		-merged sidebar functions to header.php and deleted success.php
+
+	Sophie:
+		-search function and checkout page in progress
+		-finalize search and checkout page
+		- image 3 doesnt work in the index.php
+
