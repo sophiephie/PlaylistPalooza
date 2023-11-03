@@ -1,17 +1,25 @@
 <?php
 require 'includes/dbConnect.php';
 
+// Initialize variables
 $searchErr = '';
 $searchTerm = '';
 
+// Check if the 'search' parameter is set in the URL
 if (isset($_GET['search'])) {
+  //Retrieve the search query from the URL
   $searchTerm = $_GET['search'];
+
+  //Check if the search query is not empty
   if (!empty($searchTerm)) {
+    // Prepare the sql to search for the
     $sql = "SELECT a.artistName, a.imageLink, e.eventId, e.date, l.locationName
             FROM artist a
             JOIN events e ON a.artistId = e.mainArtistId
             JOIN locations l ON e.location_Id = l.locationId
             WHERE artistName LIKE :search";
+
+    // Prepare and execute the SQL statement
     $stmt = $db->prepare($sql);
     $searchParam = '%' . $searchTerm . '%';
     $stmt->bindParam(':search', $searchParam, PDO::PARAM_STR);
@@ -21,7 +29,7 @@ if (isset($_GET['search'])) {
     $searchErr = "Please enter the artist name";
   }
 }
-
+// Include the header
 include "includes/header.php";
 ?>
 

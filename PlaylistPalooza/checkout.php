@@ -10,7 +10,7 @@ if (!$userIsLoggedIn) {
 if (isset($_GET['event'])) {
     $eventID = $_GET['event'];
 
-    // Fetch event details based on eventID (similar to your current code)
+    // Fetch event details based on eventID
     $sql = "SELECT 
         e.eventId, 
         e.mainArtistId, 
@@ -53,7 +53,7 @@ if (isset($_GET['event'])) {
             $totalPrice = $ticketPrice * $ticketQuantity;
             $userID = $_SESSION['user_id']; // Get the user ID from the session (user authentication required)
 
-            // Insert purchase data into the database (adjust the SQL statement based on your database schema)
+            // Insert purchase data into the database
             $insertQuery = "INSERT INTO orders (eventId, userId, ticketQuantity, totalAmount) VALUES (:eventId, :userId, :ticketQuantity, :totalAmount)";
             $insertStatement = $db->prepare($insertQuery);
             $insertStatement->execute([
@@ -90,6 +90,7 @@ function pageNotFound()
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/checkout.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Checkout| Playlist Palooza</title>
