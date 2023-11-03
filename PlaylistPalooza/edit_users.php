@@ -95,15 +95,15 @@ if (isset($_GET['id'])) {
           <table class="table table-striped table-hover">
             <thead>
               <tr>
-                <th>userId</th>
-                <th>email</th>
-                <th>password</th>
-                <th>firstName</th>
-                <th>lastName</th>
-                <th>phoneNumber</th>
-                <th>accountStatus</th>
-                <th>adminStatus</th>
-                <th>update</th>
+                <th>User Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Account Status</th>
+                <th>Admin Status</th>
+                <th>Update</th>
               </tr>
             </thead>
             <tbody>

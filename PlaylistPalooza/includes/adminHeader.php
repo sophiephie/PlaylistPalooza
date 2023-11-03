@@ -34,7 +34,7 @@
 
       <!-- Navigation links -->
       <div class="navbar-nav">
-        <a class="nav-link" href="index.php">Home</a>
+        <a class="nav-link" href="admin.php">Home</a>
         <a class="nav-link" href="#" id="myAccountLink">Admin</a>
       </div>
     </div>
@@ -53,7 +53,8 @@
       </div>
       <div class="offcanvas-body">
           <p><a href="usersPanel.php">Manage Users</a></p>
-          <p><a href="eventsPanel.php">Manage Event</a></p>
+          <p><a href="eventsPanel.php">Manage Events</a></p>
+          <p><a href="artistsPanel.php">Manage Artists</a></p>
           <p><a href="logout.php">Sign Out</a></p>
       </div>
     </div>
