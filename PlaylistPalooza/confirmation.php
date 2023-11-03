@@ -5,6 +5,7 @@ require 'includes/dbConnect.php';
 $eventID = $_GET['event'];
 $ticketQuantity = $_GET['quantity'];
 $totalPrice = $_GET['total'];
+$orderId = $_GET['orderId'];
 
 // Query to fetch event details
 $eventQuery = "SELECT e.eventId, e.mainArtistId, mart.artistName as mainName, e.openerArtistId, oart.artistName as openName,
@@ -67,6 +68,9 @@ if ($eventDetails) {
             <li><strong>Total Price:</strong> $
               <?= $totalPrice ?>
             </li>
+            <li><strong> Confirmation number: </strong>
+              <?= $orderId ?>
+
           </ul>
         </div>
       </div>

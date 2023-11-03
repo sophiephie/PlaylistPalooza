@@ -64,8 +64,10 @@ if (isset($_GET['event'])) {
                 'totalAmount' => $totalPrice,
             ]);
 
+            $orderId = $db->lastInsertId('orderId');
+
             // Redirect to the confirmation page after successful purchase
-            header("Location: confirmation.php?event=$eventID&quantity=$ticketQuantity&total=$totalPrice");
+            header("Location: confirmation.php?event=$eventID&quantity=$ticketQuantity&total=$totalPrice&orderId=$orderId");
             exit();
         } else {
             $ticketWarning = "Not enough tickets available.";
