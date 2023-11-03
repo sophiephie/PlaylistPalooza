@@ -12,12 +12,16 @@ if (isset($_GET['search'])) {
 
   //Check if the search query is not empty
   if (!empty($searchTerm)) {
-    // Prepare the sql to search for the
+    // Prepare the SQL query to search for events by artist name, location, and genre
     $sql = "SELECT a.artistName, a.imageLink, e.eventId, e.date, l.locationName
-            FROM artist a
-            JOIN events e ON a.artistId = e.mainArtistId
-            JOIN locations l ON e.location_Id = l.locationId
-            WHERE artistName LIKE :search";
+    FROM artist a
+    JOIN events e ON a.artistId = e.mainArtistId
+    JOIN locations l ON e.location_Id = l.locationId
+    JOIN genres g ON e.musicalGenre = g.genreId
+    WHERE artistName LIKE :search
+    OR locationName LIKE :search
+    OR genreName LIKE :search";
+
 
     // Prepare and execute the SQL statement
     $stmt = $db->prepare($sql);
@@ -26,7 +30,7 @@ if (isset($_GET['search'])) {
     $stmt->execute();
     $searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } else {
-    $searchErr = "Please enter the artist name";
+    $searchErr = "Please enter a keyword";
   }
 }
 // Include the header
