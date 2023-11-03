@@ -26,7 +26,7 @@ include 'includes/header.php';
 <html>
 
 <head>
-  <!-- Add your head content here -->
+  <link rel="stylesheet" href="css/tickets.css" />
   <title>Ticket Purchase History</title>
 </head>
 
@@ -75,7 +75,6 @@ include 'includes/header.php';
 
   <?php include 'includes/footer.html'; ?>
 
-  <!-- Add your JavaScript or other scripts here if needed -->
 </body>
 
 </html>
