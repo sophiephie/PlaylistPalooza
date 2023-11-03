@@ -113,6 +113,11 @@ try {
                <?php endforeach; ?>
             </tbody>
           </table>
+          <br />
+          <a
+                href="create_event.php"
+                class="btn btn-primary ml-auto"
+                >Create New Event</a>
         </div>
       </div>
     </div>

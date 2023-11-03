@@ -13,6 +13,6 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     
     // Redirect back to the events management page
-    header("Location: eventssPanel.php");
+    header("Location: eventsPanel.php");
     exit;
 }
