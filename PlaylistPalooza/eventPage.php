@@ -19,7 +19,7 @@ $sql =
         l.locationName,
         e.date,
         e.time,
-        e.price,
+        e.price,  -- Add ticket price to the query
         mart.imageLink,
         SUM(o.ticketQuantity) as ticketsSold,
         l.maxCapacity as maxCapacity
@@ -43,6 +43,7 @@ $openerArtistName = "with " . "Opening Act";
 $eventLocation = "Place Bell Laval";
 $eventDate = "November 21, 2023";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,14 +80,17 @@ $eventDate = "November 21, 2023";
                 <h4>
                     <?= date('F j, Y', strtotime($result['date'])) . " at " . $result['time'] ?>
                 </h4>
+                <h4>Ticket Price: $
+                    <?= $result['price'] ?>
+                </h4> <!-- Display the ticket price -->
                 <?php if ($result['ticketsSold'] >= $result['maxCapacity']) { ?>
-                    <button type="button" class="btn btn-light">Sold
-                        Out</button>
+                    <button type="button" class="btn btn-light">Sold Out</button>
                 <?php } else { ?>
                     <a href="checkout.php?event=<?= $result['eventId'] ?>"><button type="button"
                             class="btn btn-dark">Purchase Tickets</button></a>
                 <?php } ?>
             </section>
+
         </article>
 
         <article class="otherEvent row container text-start">
