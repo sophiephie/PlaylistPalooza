@@ -65,11 +65,16 @@ function getGenres() {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Add your meta, title, and Bootstrap links here -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Event Page</title>
+    <link rel="stylesheet" href="css/create_event.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container2">
       <h2>Create New Event</h2>
+      <br/>
+      <div class="wrapper">
       <form action="create_event.php" method="post">
         <div class="mb-3">
           <label for="artistId" class="form-label">Artist Name:</label>
@@ -90,9 +95,9 @@ function getGenres() {
           </select>
         </div>
         <div class="mb-3">
-          <label for="genreId" class="form-label">Genre Name:</label> <!-- Change the label -->
-          <select class="form-select" name="genreId" id="genreId" required> <!-- Change the name and ID -->
-            <option value="" disabled selected>Select a genre</option> <!-- Update the placeholder -->
+          <label for="genreId" class="form-label">Genre Name:</label>
+          <select class="form-select" name="genreId" id="genreId" required> 
+            <option value="" disabled selected>Select a genre</option> 
             <?php foreach ($genres as $genre): ?>
               <option value="<?php echo $genre['genreId']; ?>"><?php echo $genre['genreName']; ?></option>
             <?php endforeach; ?>
@@ -112,6 +117,7 @@ function getGenres() {
         </div>
         <button type="submit" class="btn btn-primary">Create Event</button>
       </form>
+      </div>
     </div>
   </body>
 </html>
