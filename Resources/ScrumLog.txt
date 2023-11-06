@@ -170,3 +170,14 @@ Daily Scrum Log
 		-finalize search and checkout page
 		- image 3 doesnt work in the index.php
 
+03/11/2023
+	Bo Kyung:
+		-created admin panel for managing artists
+		-added "create new events" function to events panel
+		-have some issue with uploading directory 
+
+05/11/2023
+	Bo Kyung:
+		-updated "create new events" form 
+		-updated styles on contact page
+
