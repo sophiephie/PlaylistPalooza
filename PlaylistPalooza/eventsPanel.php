@@ -1,7 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/adminHeader.php";
-
+include "includes/dbConnect.php";
 
 try {
   // Set the PDO error mode to exception

@@ -1,4 +1,7 @@
 <?php
+session_start();
+include "includes/header.php";
+
 // connect to database
 include "includes/dbConnect.php";
 
@@ -44,8 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 }
-
-include "includes/header.php";
 
 ?>
 

@@ -1,6 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/adminHeader.php";
+include "includes/dbConnect.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Handle form submission to update user data

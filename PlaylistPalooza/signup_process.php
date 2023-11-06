@@ -1,7 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/header.php";
-
+include "includes/dbConnect.php";
 
 // check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] == "POST") {

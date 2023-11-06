@@ -1,7 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/adminHeader.php";
-
+include "includes/dbConnect.php";
 
 if (isset($_GET['id'])) {
     $artistId = $_GET['id'];

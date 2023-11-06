@@ -1,31 +1,34 @@
 <?php
-
 session_start();
-
 include "includes/header.php";
 
-$errorMessage = "";
+// Include the database connection file
+include "includes/dbConnect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $message = $_POST["message"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
 
-  // check if required fields are empty.
-  if (empty($name) || empty($email) || empty($message)) {
-    $errorMessage = "Please fill in all the required fields.";
-  }
+    // Check if required fields are not empty and email is valid
+    if (empty($name) || empty($email) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMessage = "Please fill in all the required fields and provide a valid email address.";
+    } else {
+        // Insert data into the contactMessage table
+        $sql = "INSERT INTO contactMessage (name, email, message) VALUES (:name, :email, :message)";
+        $stmt = $db->prepare($sql);
 
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    $errorMessages = "Please enter a valid email address. <br/>";
-  }
-
-  // Process the form data if there are no errors.
-  if (empty($errorMessage)) {
-    $successMessage = "Thank you for your submission!";
-  }
+        if ($stmt->execute([
+            ":name" => $name,
+            ":email" => $email,
+            ":message" => $message
+        ])) {
+            $successMessage = "Thank you for your submission!";
+        } else {
+            $errorMessage = "Error saving the message. Please try again.";
+        }
+    }
 }
-
 ?>
 
 <!DOCTYPE html>
