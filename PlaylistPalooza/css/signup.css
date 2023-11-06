@@ -1,8 +1,13 @@
 body {
-  background-color: #fff0df;
+  font-family: Bebas Neue;
+  background-color: #fff0df !important;
 }
 
 .wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 80px;
   margin-bottom: 80px;
 }
@@ -12,6 +17,7 @@ body {
   padding: 35px 45px;
   margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .form-signin h2 {

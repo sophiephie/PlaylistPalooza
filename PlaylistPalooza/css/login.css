@@ -1,8 +1,21 @@
+body {
+  font-family: Bebas Neue;
+  background-color: #fff0df !important;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form-signin {
-  max-width: 380px;
+  width: 380px;
   padding: 35px 45px;
   margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 .form-signin h2 {
