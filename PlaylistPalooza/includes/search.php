@@ -8,7 +8,7 @@ if (isset($_POST['search'])) {
     header("location: searchResult.php?search={$search}");
   } else {
     // Error message if the search query is empty
-    $searchErr = "Please enter the artist name";
+    $searchErr = "Nothing is found";
   }
 }
 ?>

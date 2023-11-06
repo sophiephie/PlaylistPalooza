@@ -30,7 +30,7 @@ if (isset($_GET['search'])) {
     $stmt->execute();
     $searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } else {
-    $searchErr = "Please enter a keyword";
+    $searchErr = "Nothing is found";
   }
 }
 // Include the header
