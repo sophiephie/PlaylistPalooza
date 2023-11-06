@@ -170,11 +170,21 @@ Daily Scrum Log
 		-finalize search and checkout page
 		- image 3 doesnt work in the index.php
 
+	Nicholas:
+		-Started migrating code to website
+		-Started setting up database for website
+		-Tweaked certain pages for functioning on website due to unforeseen warnings
+
 03/11/2023
 	Bo Kyung:
 		-created admin panel for managing artists
 		-added "create new events" function to events panel
 		-have some issue with uploading directory 
+
+	Nicholas:
+		-Revised website code
+		-Revised database
+		-Issues with website, possibly caused by php sessions; Error: "Headers already sent"
 
 05/11/2023
 	Bo Kyung:
