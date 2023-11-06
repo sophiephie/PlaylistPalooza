@@ -1,15 +1,20 @@
 <?php
-// Get the user's ID from the session
-$userId = $_SESSION['userId'];
-
 // Include the database connection
 require 'includes/dbConnect.php';
 
-// Query to retrieve the user's ticket purchase history
-$sql = "SELECT o.orderId, e.eventId, e.mainArtistId, e.date, e.location_Id, e.price
-        FROM orders o
-        JOIN events e ON o.eventId = e.eventId
-        WHERE o.userId = :userId";
+// Get the user's ID from the session
+$userId = $_SESSION['user_id'];
+
+
+
+// Query to retrieve the user's ticket purchase history by joining location & artist tables to get also the ArtistName and the LocationName
+$sql = "SELECT o.orderId, e.eventId, e.mainArtistId, e.date, o.orderDate, e.location_Id, o.ticketQuantity, o.totalAmount, a.artistName, l.locationName
+        FROM orders as o
+        JOIN events as e ON o.eventId = e.eventId
+        JOIN locations as l on e.location_id = l.locationId
+        JOIN artist as a on e.mainArtistId = a.artistId
+        WHERE o.userId = :userId
+        ORDER BY o.orderDate DESC";
 
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
@@ -17,6 +22,7 @@ $stmt->execute();
 
 // Fetch the purchase history data
 $purchaseHistory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // Include the header
 include 'includes/header.php';
@@ -36,12 +42,13 @@ include 'includes/header.php';
     <table class="table">
       <thead>
         <tr>
-          <th>Order ID</th>
-          <th>Event ID</th>
+          <th>Confirmation Number</th>
           <th>Main Artist</th>
-          <th>Date</th>
+          <th>Event Date</th>
+          <th>Order Date</th>
           <th>Location</th>
-          <th>Price</th>
+          <th>Number of tickets</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -51,21 +58,22 @@ include 'includes/header.php';
               <?= $purchase['orderId'] ?>
             </td>
             <td>
-              <?= $purchase['eventId'] ?>
-            </td>
-            <!-- You can fetch the main artist name from the artist table -->
-            <td>
-              <?= getMainArtistName($purchase['mainArtistId']) ?>
+              <?= $purchase['artistName'] ?>
             </td>
             <td>
               <?= $purchase['date'] ?>
             </td>
-            <!-- You can fetch the location name from the locations table -->
             <td>
-              <?= getLocationName($purchase['location_Id']) ?>
+              <?= $purchase['orderDate'] ?>
+            </td>
+            <td>
+              <?= $purchase['locationName'] ?>
+            </td>
+            <td>
+              <?= $purchase['ticketQuantity'] ?>
             </td>
             <td>$
-              <?= $purchase['price'] ?>
+              <?= $purchase['totalAmount'] ?>
             </td>
           </tr>
         <?php endforeach; ?>
