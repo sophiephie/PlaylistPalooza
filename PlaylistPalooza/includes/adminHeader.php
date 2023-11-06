@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
       <!-- Logo on the left -->
-      <a class="navbar-brand" href="index.php"><img src="images/logo2.png" alt="Playlist Palooza" height="39"
+      <a class="navbar-brand" href="admin.php"><img src="images/logo2.png" alt="Playlist Palooza" height="39"
           width="245" /></a>
 
       <?php
