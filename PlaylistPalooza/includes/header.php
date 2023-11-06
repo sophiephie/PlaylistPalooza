@@ -42,22 +42,6 @@
           <a class="nav-link" href="login.php">Sign In</a>
         <?php } ?>
       </div>
-      <!-- Add the venue dropdown menu here -->
-      <form class="d-flex" method="GET" action="searchResult.php">
-        <select class="form-select" name="venue">
-          <option value="">Select Venue</option>
-          <?php
-          // Fetch venues from the database and populate the dropdown
-          include('includes/dbConnect.php'); // Include database connection
-          $sql = "SELECT locationName FROM locations";
-          $query = $db->query($sql);
-          while ($row = $query->fetch()) {
-            echo "<option value='" . $row['locationName'] . "'>" . $row['locationName'] . "</option>";
-          }
-          ?>
-        </select>
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
     </div>
   </nav>
 
