@@ -81,6 +81,7 @@ include 'includes/header.php';
     </table>
   </div>
 
+  <!-- Include the Footer -->
   <?php include 'includes/footer.html'; ?>
 
 </body>

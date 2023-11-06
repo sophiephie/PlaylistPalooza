@@ -50,11 +50,12 @@ $eventPageId = $result['eventId'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/eventPage.css" />
     <title>
-        <?= $result['mainName']  . " | Playlist Palooza" ?>
+        <?= $result['mainName'] . " | Playlist Palooza" ?>
     </title>
 </head>
 
@@ -85,7 +86,8 @@ $eventPageId = $result['eventId'];
                 <?php if ($result['ticketsSold'] >= $result['maxCapacity']) { ?>
                     <button type="button" class="btn btn-light">Sold Out</button>
                 <?php } else { ?>
-                    <a href="checkout.php?event=<?= $result['eventId'] ?>"><button type="button" class="btn btn-dark">Purchase Tickets</button></a>
+                    <a href="checkout.php?event=<?= $result['eventId'] ?>"><button type="button"
+                            class="btn btn-dark">Purchase Tickets</button></a>
                 <?php } ?>
             </section>
 
@@ -122,14 +124,22 @@ $eventPageId = $result['eventId'];
 
                 while ($row = $query->fetch()) {
                     $link = "eventPage.php?item=" . $row['eventId'];
-                ?>
+                    ?>
                     <figure class="col">
                         <a href=<?= $link ?>> <img src=<?= $row['imageLink'] ?> alt="artist name" width="100%"></a>
                         <figcaption>
-                            <h4><?= $row['locationName'] ?></h4>
-                            <h2><?= $row['mainName'] ?></h2>
-                            <h3><?= "with " .  $row['openName'] ?></h3>
-                            <h4><?= date('F j, Y', strtotime($row['eventDate'])) ?> </h4>
+                            <h4>
+                                <?= $row['locationName'] ?>
+                            </h4>
+                            <h2>
+                                <?= $row['mainName'] ?>
+                            </h2>
+                            <h3>
+                                <?= "with " . $row['openName'] ?>
+                            </h3>
+                            <h4>
+                                <?= date('F j, Y', strtotime($row['eventDate'])) ?>
+                            </h4>
                         </figcaption>
                     </figure>
                 <?php } ?>
@@ -141,7 +151,9 @@ $eventPageId = $result['eventId'];
         <?php include "includes/footer.html"; ?>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

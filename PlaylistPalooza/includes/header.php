@@ -4,9 +4,9 @@
 <head>
   <link href="images/icon2.png" rel="icon" />
 
-  <!-- Add Bootstrap CSS link -->
+  <!-- Bootstrap CSS link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <!-- Link to your custom CSS file -->
+  <!-- Link to custom CSS file -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/sidebar.css" />
 
@@ -24,7 +24,7 @@
 
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
-      <!-- Logo on the left (replace this with your logo) -->
+      <!-- Logo on the left -->
       <a class="navbar-brand" href="index.php"><img src="images/logo2.png" alt="Playlist Palooza" height="39"
           width="245" /></a>
 
@@ -63,12 +63,12 @@
     </div>
   </div>
 
-  <!-- Include Bootstrap JavaScript library -->
+  <!-- Bootstrap JavaScript library -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <!-- Add the JavaScript code for the sidebar interaction -->
+  <!-- JavaScript code for the sidebar interaction -->
   <script>
     // Get references to the link and sidebar elements
     const myAccountLink = document.getElementById("myAccountLink");

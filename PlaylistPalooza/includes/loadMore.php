@@ -29,10 +29,10 @@ while ($row = $query->fetch()) {
 	$html .= "<figure class='eventCards col'>";
 	$html .= "<a href=" . $link . "> <img class='img-fluid' src='" . $mainArtist['imageLink'] . "' alt='picture_of_artist'></a>";
 	$html .= "<figcaption>";
-	$html .=	"<h4>" . $rowLoc['locationName']  . "</h4>";
-	$html .=	"<h2>" . $mainArtist['artistName'] . "</h2>";
-	$html .=	"<h3>with " . $openArtist['artistName'] . "</h3>";
-	$html .=	"<h4>" . date('F j, Y', strtotime($row['date'])) . "</h4>";
+	$html .= "<h4>" . $rowLoc['locationName'] . "</h4>";
+	$html .= "<h2>" . $mainArtist['artistName'] . "</h2>";
+	$html .= "<h3>with " . $openArtist['artistName'] . "</h3>";
+	$html .= "<h4>" . date('F j, Y', strtotime($row['date'])) . "</h4>";
 	$html .= "</figcaption>";
 	$html .= "</figure>";
 }

@@ -98,7 +98,7 @@ function pageNotFound()
 
 <body>
     <?php include "includes/header.php"; ?>
-    <!-- Your Bootstrap card container for the checkout form -->
+    <!-- Bootstrap card container for the checkout form -->
     <div class="container my-5">
         <div class="card">
             <div class="card-body">

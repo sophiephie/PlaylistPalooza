@@ -22,7 +22,7 @@ $eventDetails = $query->fetch();
 
 // Check if the event and user are valid and have matching records in the database
 if ($eventDetails) {
-  // Include header
+  // Include the header
   include 'includes/header.php';
   ?>
   <!DOCTYPE html>
@@ -45,7 +45,7 @@ if ($eventDetails) {
         <div class="card-body">
           <h4 class="card-title">Thank you for your purchase!</h4>
 
-          <!-- Display purchased event details here -->
+          <!-- Display purchased event details -->
           <p class="card-text">You have successfully purchased tickets for the following event:</p>
           <ul>
             <li><strong>Main Artist:</strong>
@@ -83,7 +83,7 @@ if ($eventDetails) {
   </html>
 
   <?php
-  // Include footer
+  // Include the footer
   include 'includes/footer.html';
 } else {
   // Handle the case where the event details are not found

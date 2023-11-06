@@ -83,7 +83,7 @@ include "includes/header.php";
       <?php endif; ?>
     </div>
   </div>
-
+  <!-- Include Footer -->
   <?php include "includes/footer.html"; ?>
 </body>
 
