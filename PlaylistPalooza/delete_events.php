@@ -1,7 +1,6 @@
 <?php
-
-include "includes/adminHeader.php";
 include "includes/dbConnect.php";
+include "includes/adminHeader.php";
 
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];
@@ -11,7 +10,7 @@ if (isset($_GET['id'])) {
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':eventId', $eventId);
     $stmt->execute();
-    
+
     // Redirect back to the events management page
     header("Location: eventsPanel.php");
     exit;

@@ -1,7 +1,7 @@
 <?php
-
-include "includes/adminHeader.php";
 include "includes/dbConnect.php";
+include "includes/adminHeader.php";
+
 
 if (isset($_GET['id'])) {
     $artistId = $_GET['id'];
@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':artistId', $artistId);
     $stmt->execute();
-    
+
     // Redirect back to the events management page
     header("Location: artistsPanel.php");
     exit;

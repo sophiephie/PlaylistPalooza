@@ -1,7 +1,6 @@
 <?php
-
-include "includes/adminHeader.php";
 include "includes/dbConnect.php";
+include "includes/adminHeader.php";
 
 if (isset($_GET['id'])) {
     $userId = $_GET['id'];
@@ -11,7 +10,7 @@ if (isset($_GET['id'])) {
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':userId', $userId);
     $stmt->execute();
-    
+
     // Redirect back to the users management page
     header("Location: usersPanel.php");
     exit;
