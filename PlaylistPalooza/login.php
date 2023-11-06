@@ -2,8 +2,6 @@
 // connect to database
 include "includes/dbConnect.php";
 
-include "includes/header.php";
-
 $errorMessages = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -46,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 }
+
+include "includes/header.php";
 
 ?>
 
