@@ -1,6 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/adminHeader.php";
+include "includes/dbConnect.php";
 
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "includes/dbConnect.php";
 
 // check that GET has an item

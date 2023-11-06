@@ -1,7 +1,7 @@
 <?php
-include "includes/dbConnect.php";
+session_start();
 include "includes/adminHeader.php";
-
+include "includes/dbConnect.php";
 
 // Get the list of artists and locations
 $artists = getArtists();

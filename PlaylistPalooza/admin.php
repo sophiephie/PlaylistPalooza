@@ -1,7 +1,7 @@
 <?php
-require 'includes/dbConnect.php';
+session_start();
 include 'includes/adminHeader.php';
-
+require 'includes/dbConnect.php';
 ?>
 
 <!DOCTYPE html>

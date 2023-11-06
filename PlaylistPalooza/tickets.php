@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include the database connection
 require 'includes/dbConnect.php';
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "includes/dbConnect.php";
 
 // Check if a user is authenticated (adjust this to your user authentication system)

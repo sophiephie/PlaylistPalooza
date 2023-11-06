@@ -1,7 +1,9 @@
 <?php
+session_start();
+include "includes/header.php";
+
 // Include the database connection file
 include "includes/dbConnect.php";
-include "includes/header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
