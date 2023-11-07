@@ -127,13 +127,10 @@ if (isset($_GET['id'])) {
                 <td><?php echo $artist['artistId']; ?></td>
                 <td><?php echo $artist['artistName']; ?></td>
                 <td><?php echo $artist['imageLink']; ?></td>
-                <td>
-                  <a href="delete_artists.php?id=<?php echo $artist['artistId']; ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i>
-                  </a>
-                </td>
+                <td></td>
               </tr>
               <tr class="edit-form">
-                <form action="edit_artists.php" method="post" enctype="multipart/form-data"> <!-- Add enctype for file uploads -->
+                <form action="edit_artists.php" method="post" enctype="multipart/form-data">
                   <td><input type="hidden" name="artistId" value="<?php echo $artist['artistId']; ?>"></td>
                   <td><input type="text" name="artistName" value="<?php echo $artist['artistName']; ?>"></td>
                   <td><input type="file" name="imageFile"></td>

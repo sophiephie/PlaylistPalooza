@@ -71,8 +71,6 @@ try {
               <td>
                 <a href="edit_artists.php?id=<?php echo $artist['artistId']; ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i>
                 </a>
-                <a href="delete_artists.php?id=<?php echo $artist['artistId']; ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i>
-                </a>
               </td>
             </tr>
           <?php endforeach; ?>
